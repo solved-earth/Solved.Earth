@@ -25,8 +25,9 @@ class AchievementPage extends StatelessWidget {
                 return AchievementTile(
                   challgeName: value.achievements[index][0],
                   achievementCondition: value.achievements[index][1],
-                  additionalExplanation: value.achievements[index][2],
-                  index: value.achievements[index][4],
+                  photoUpload: value.challenges[index][2],
+                  additionalExplanation: value.achievements[index][3],
+                  index: value.achievements[index][5],
                 ); //AchievementTile == 네모 하나(좌측 상단, 우측 상단, 좌측 하단, 우측 하단)
               },
             ),

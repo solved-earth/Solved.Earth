@@ -1,9 +1,11 @@
 import 'package:app/components/certification_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:app/Constants/gaps.dart';
 
 class ChallengePage extends StatelessWidget {
   final String challngeName;
   final String achievementCondition;
+  final String photoUpload;
   final String additionalExplanation;
 
   final int index;
@@ -12,6 +14,7 @@ class ChallengePage extends StatelessWidget {
     super.key,
     required this.challngeName,
     required this.achievementCondition,
+    required this.photoUpload,
     required this.additionalExplanation,
     required this.index,
   });
@@ -26,7 +29,9 @@ class ChallengePage extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              //achievementCondition
+              const SizedBox(
+                height: 20,
+              ),
               Container(
                 height: 160,
                 width: double.infinity,
@@ -37,6 +42,22 @@ class ChallengePage extends StatelessWidget {
                 child: Center(
                   child: Text(
                     achievementCondition,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              Gaps.v24,
+              //achievementCondition
+              Container(
+                height: 160,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Center(
+                  child: Text(
+                    photoUpload,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -53,7 +74,7 @@ class ChallengePage extends StatelessWidget {
 
               //additionalExplanation
               Container(
-                height: 200,
+                height: 220,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.grey[200],

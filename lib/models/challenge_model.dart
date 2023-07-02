@@ -6,6 +6,7 @@ class ChallengeModel extends ChangeNotifier {
     [
       '커여운 고양이',
       '고양이를 찾아 사진을 찍으세요',
+      '갤러리에서 업로드',
       '모든 고양이는 귀엽습니당',
       false, //성공, 실패 여부 판단 ==>
       0,
@@ -13,13 +14,15 @@ class ChallengeModel extends ChangeNotifier {
     [
       '안녕하수달',
       '1. 수달을 찾으세요\n2. 인사하는 사진을 찍으세요',
+      '갤러리에서 업로드',
       '전 수달이 귀여워요',
       false,
       1,
     ],
     [
       '와 야생의 찬희다',
-      '1. 찬희를 찾으세요1',
+      '1. 찬희를 찾으세요',
+      '갤러리에서 업로드',
       '헉',
       false,
       2,
@@ -32,7 +35,7 @@ class ChallengeModel extends ChangeNotifier {
   List get achievements => _achievements;
 
   void clearChallenge(int index) {
-    _challenges[index][3] = true;
+    _challenges[index][4] = true;
     _achievements.add(_challenges[index]);
     notifyListeners();
   } // 성공 표시를 위한 로직

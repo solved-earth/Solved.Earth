@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class ChallengeListTile extends StatelessWidget {
   final String challgeName;
   final String achievementCondition;
+  final String photoUpload;
   final String additionalExplanation;
   final int index;
 
@@ -11,6 +12,7 @@ class ChallengeListTile extends StatelessWidget {
     super.key,
     required this.challgeName,
     required this.achievementCondition,
+    required this.photoUpload,
     required this.additionalExplanation,
     required this.index,
   });
@@ -27,6 +29,7 @@ class ChallengeListTile extends StatelessWidget {
               return ChallengePage(
                 challngeName: challgeName,
                 achievementCondition: achievementCondition,
+                photoUpload: photoUpload,
                 additionalExplanation: additionalExplanation,
                 index: index,
               );
