@@ -75,7 +75,7 @@ class _SideBarState extends State<SideBar> {
   @override
   Widget build(BuildContext context) {
     return HiddenDrawerMenu(
-      backgroundColorMenu: Colors.grey,
+      backgroundColorMenu: const Color.fromRGBO(151, 193, 169, 1),
       screens: _pages,
       initPositionSelected: 0,
       slidePercent: 60,
