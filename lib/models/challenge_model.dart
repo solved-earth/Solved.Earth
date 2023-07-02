@@ -7,7 +7,7 @@ class ChallengeModel extends ChangeNotifier {
       '커여운 고양이',
       '고양이를 찾아 사진을 찍으세요',
       '모든 고양이는 귀엽습니당',
-      false,
+      false, //성공, 실패 여부 판단 ==>
       0,
     ],
     [
@@ -35,5 +35,5 @@ class ChallengeModel extends ChangeNotifier {
     _challenges[index][3] = true;
     _achievements.add(_challenges[index]);
     notifyListeners();
-  }
+  } // 성공 표시를 위한 로직
 }

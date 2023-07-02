@@ -20,15 +20,19 @@ class AchievementTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: GestureDetector(
-        onTap: () =>
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return ChallengePage(
-            challngeName: challgeName,
-            achievementCondition: achievementCondition,
-            additionalExplanation: additionalExplanation,
-            index: index,
-          );
-        })),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return ChallengePage(
+                challngeName: challgeName,
+                achievementCondition: achievementCondition,
+                additionalExplanation: additionalExplanation,
+                index: index,
+              );
+            },
+          ),
+        ),
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,

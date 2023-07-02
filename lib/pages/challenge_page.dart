@@ -28,7 +28,7 @@ class ChallengePage extends StatelessWidget {
             children: [
               //achievementCondition
               Container(
-                height: 80,
+                height: 160,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.grey[200],

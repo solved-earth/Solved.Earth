@@ -14,6 +14,7 @@ class AchievementPage extends StatelessWidget {
           Expanded(
               child: Consumer<ChallengeModel>(
             builder: (context, value, child) => GridView.builder(
+              //value == challenge model
               itemCount: value.achievements.length,
               padding: const EdgeInsets.all(12),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -26,7 +27,7 @@ class AchievementPage extends StatelessWidget {
                   achievementCondition: value.achievements[index][1],
                   additionalExplanation: value.achievements[index][2],
                   index: value.achievements[index][4],
-                );
+                ); //AchievementTile == 네모 하나(좌측 상단, 우측 상단, 좌측 하단, 우측 하단)
               },
             ),
           ))
