@@ -33,7 +33,7 @@ class _SideBarState extends State<SideBar> {
       //main page
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'MainPage',
+          name: 'Hello there!',
           baseStyle: _baseStyle,
           selectedStyle: _selectedStyle,
         ),
