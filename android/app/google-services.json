@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "392221487405",
+    "project_id": "eco-tree-growing",
+    "storage_bucket": "eco-tree-growing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392221487405:android:4d9e710a32bb53412523a4",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392221487405-s49buo5l1anar2a3v1e2lcq69ej849o5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjtMN3Sp2BQKbR1BScXqjA16EapH3Bb9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392221487405-s49buo5l1anar2a3v1e2lcq69ej849o5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
