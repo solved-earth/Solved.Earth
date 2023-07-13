@@ -24,13 +24,22 @@ class _CertificationTileState extends State<CertificationTile> {
   Widget build(BuildContext context) {
     ChallengeModel challengeModel = Provider.of<ChallengeModel>(context);
 
-    Uint8List? _file; //오류 발생 시 _(언더바) 삭제
+    Uint8List? file0; //오류 발생 시 _(언더바) 삭제
     final TextEditingController descriptionController = TextEditingController();
 
     void clearImage() {
       setState(() {
-        _file = null;
+        file0 = null;
       });
+    }
+
+    void handleTap() {
+      bool isAchieved = challengeModel.challenges[widget.index][4];
+      if (isAchieved) {
+        //
+      } else {
+        challengeModel.clearChallenge(widget.index);
+      }
     }
 
     bool isLoading = false;
@@ -40,8 +49,9 @@ class _CertificationTileState extends State<CertificationTile> {
       }); // This is for displaying a linear indicator during the upload process
       try {
         String res = await ImageStoreMethods()
-            .uploadPost(descriptionController.text, _file!);
+            .uploadPost(descriptionController.text, file0!);
         if (res == 'success') {
+          handleTap();
           setState(() {
             isLoading = false;
           });
@@ -75,7 +85,7 @@ class _CertificationTileState extends State<CertificationTile> {
                   );
                   setState(
                     () {
-                      _file = file; //오류 발생 시 _(언더바) 삭제
+                      file0 = file; //오류 발생 시 _(언더바) 삭제
                     },
                   );
                   postImage();
@@ -91,7 +101,7 @@ class _CertificationTileState extends State<CertificationTile> {
                   );
                   setState(
                     () {
-                      _file = file; //오류 발생 시 _(언더바) 삭제
+                      file0 = file; //오류 발생 시 _(언더바) 삭제
                     },
                   );
                   postImage();
@@ -110,17 +120,9 @@ class _CertificationTileState extends State<CertificationTile> {
       );
     }
 
-    void handleTap() {
-      bool isAchieved = challengeModel.challenges[widget.index][4];
-      if (isAchieved) {
-      } else {
-        challengeModel.clearChallenge(widget.index);
-      }
-    }
-
     return GestureDetector(
-      onTap: handleTap,
-      child: _file == null
+      onTap: () {},
+      child: file0 == null
           ? Column(
               children: [
                 IconButton(
