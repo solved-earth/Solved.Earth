@@ -26,7 +26,7 @@ class ChallengeModel extends ChangeNotifier {
       '헉',
       false,
       2,
-    ]
+    ],
   ];
 
   final List _achievements = [];

@@ -25,69 +25,71 @@ class ChallengePage extends StatelessWidget {
         appBar: AppBar(
           title: Text(challngeName),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 160,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(12),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-                child: Center(
-                  child: Text(
-                    achievementCondition,
-                    textAlign: TextAlign.center,
+                Container(
+                  height: 160,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      achievementCondition,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
-              ),
-              Gaps.v24,
-              //achievementCondition
-              Container(
-                height: 160,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Center(
-                  child: Text(
-                    photoUpload,
-                    textAlign: TextAlign.center,
+                Gaps.v24,
+                //achievementCondition
+                Container(
+                  height: 160,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      photoUpload,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
+                const SizedBox(
+                  height: 24,
+                ),
 
-              //인증 버튼
-              CertificationTile(index: index),
-              const SizedBox(
-                height: 24,
-              ),
-
-              //additionalExplanation
-              Container(
-                height: 220,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(12),
+                //인증 버튼
+                CertificationTile(index: index),
+                const SizedBox(
+                  height: 24,
                 ),
-                child: Center(
-                  child: Text(
-                    additionalExplanation,
-                    textAlign: TextAlign.center,
+
+                //additionalExplanation
+                Container(
+                  height: 220,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      additionalExplanation,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ));
   }
