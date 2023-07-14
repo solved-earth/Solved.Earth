@@ -24,9 +24,8 @@ class ChallngeListPage extends StatelessWidget {
                 return ChallengeListTile(
                   challgeName: value.challenges[index][0],
                   achievementCondition: value.challenges[index][1],
-                  photoUpload: value.challenges[index][2],
-                  additionalExplanation: value.challenges[index][3],
-                  index: value.challenges[index][5],
+                  additionalExplanation: value.challenges[index][2],
+                  index: value.challenges[index][4],
                 );
               },
             ),

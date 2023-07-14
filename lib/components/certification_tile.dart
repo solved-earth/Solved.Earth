@@ -34,7 +34,7 @@ class _CertificationTileState extends State<CertificationTile> {
     }
 
     void handleTap() {
-      bool isAchieved = challengeModel.challenges[widget.index][4];
+      bool isAchieved = challengeModel.challenges[widget.index][3];
       if (isAchieved) {
         //
       } else {
@@ -129,7 +129,7 @@ class _CertificationTileState extends State<CertificationTile> {
                   onPressed: () => _imageSelect(context),
                   icon: const Icon(Icons.photo),
                   iconSize: 60,
-                  color: challengeModel.challenges[widget.index][4]
+                  color: challengeModel.challenges[widget.index][3]
                       ? Colors.green[200]
                       : Colors.red[200],
                 ),
@@ -159,9 +159,3 @@ class _CertificationTileState extends State<CertificationTile> {
     );
   }
 }
-
-
-/*color: challengeModel.challenges[widget.index][4]
-              ? Colors.green[200]
-              : Colors.red[200],
-          borderRadius: BorderRadius.circular(12),*/
