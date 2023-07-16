@@ -69,55 +69,61 @@ class _CertificationTileState extends State<CertificationTile> {
     }
 
     _imageSelect(BuildContext context) async {
-      return showDialog(
-        context: context,
-        builder: (context) {
-          return SimpleDialog(
-            title: const Text('Select Image'),
-            children: [
-              SimpleDialogOption(
-                padding: const EdgeInsets.all(20),
-                child: const Text('Take a Photo'),
-                onPressed: () async {
-                  Navigator.of(context).pop();
-                  Uint8List file = await pickImage(
-                    ImageSource.camera,
-                  );
-                  setState(
-                    () {
-                      file0 = file; //오류 발생 시 _(언더바) 삭제
-                    },
-                  );
-                  postImage();
-                },
-              ),
-              SimpleDialogOption(
-                padding: const EdgeInsets.all(20),
-                child: const Text('Choose From Gallery'),
-                onPressed: () async {
-                  Navigator.of(context).pop();
-                  Uint8List file = await pickImage(
-                    ImageSource.gallery,
-                  );
-                  setState(
-                    () {
-                      file0 = file; //오류 발생 시 _(언더바) 삭제
-                    },
-                  );
-                  postImage();
-                },
-              ),
-              SimpleDialogOption(
-                padding: const EdgeInsets.all(20),
-                child: const Text('Cancel'),
-                onPressed: () async {
-                  Navigator.of(context).pop();
-                },
-              )
-            ],
-          );
-        },
-      );
+      bool isAchieved = challengeModel.challenges[widget.index][3];
+
+      if (isAchieved) {
+        return showSnackBar('이미 성공한 도전과제 입니다.', context);
+      } else {
+        return showDialog(
+          context: context,
+          builder: (context) {
+            return SimpleDialog(
+              title: const Text('Select Image'),
+              children: [
+                SimpleDialogOption(
+                  padding: const EdgeInsets.all(20),
+                  child: const Text('Take a Photo'),
+                  onPressed: () async {
+                    Navigator.of(context).pop();
+                    Uint8List file = await pickImage(
+                      ImageSource.camera,
+                    );
+                    setState(
+                      () {
+                        file0 = file; //오류 발생 시 _(언더바) 삭제
+                      },
+                    );
+                    postImage();
+                  },
+                ),
+                SimpleDialogOption(
+                  padding: const EdgeInsets.all(20),
+                  child: const Text('Choose From Gallery'),
+                  onPressed: () async {
+                    Navigator.of(context).pop();
+                    Uint8List file = await pickImage(
+                      ImageSource.gallery,
+                    );
+                    setState(
+                      () {
+                        file0 = file; //오류 발생 시 _(언더바) 삭제
+                      },
+                    );
+                    postImage();
+                  },
+                ),
+                SimpleDialogOption(
+                  padding: const EdgeInsets.all(20),
+                  child: const Text('Cancel'),
+                  onPressed: () async {
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            );
+          },
+        );
+      }
     }
 
     return GestureDetector(
