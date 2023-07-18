@@ -17,7 +17,7 @@ class Tree extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const TreeDesignPage(),
+                  builder: (context) => TreeDesignPage(),
                 ),
               );
             },

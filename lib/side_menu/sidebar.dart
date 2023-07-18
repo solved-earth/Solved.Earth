@@ -1,6 +1,7 @@
 import 'package:app/pages/achievement_page.dart';
 import 'package:app/pages/challenge_list_page.dart';
 import 'package:app/pages/main_page.dart';
+import 'package:app/pages/tree_design_page.dart';
 import 'package:app/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
@@ -38,6 +39,15 @@ class _SideBarState extends State<SideBar> {
           selectedStyle: _selectedStyle,
         ),
         const MainPage(),
+      ),
+
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Select your tree!',
+          baseStyle: _baseStyle,
+          selectedStyle: _selectedStyle,
+        ),
+        TreeDesignPage(),
       ),
 
       //achievement page
