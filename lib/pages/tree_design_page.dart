@@ -16,27 +16,33 @@ class TreeDesignPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            PageView.builder(
-              itemCount: treeModelList.length,
-              itemBuilder: (context, index) {
-                return Container(
+        child: PageView.builder(
+          itemCount: treeModelList.length,
+          itemBuilder: (context, index) {
+            return Stack(
+              children: [
+                Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(treeModelList[index].thumbnailUrl),
                     ),
                   ),
-                  child: Text(
-                    treeModelList[index].title,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 40),
+                ),
+                Positioned(
+                  left: 113.7,
+                  top: 70,
+                  child: SizedBox(
+                    width: 184,
+                    child: Text(
+                      treeModelList[index].title,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 40),
+                    ),
                   ),
-                );
-              },
-            ),
-          ],
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
