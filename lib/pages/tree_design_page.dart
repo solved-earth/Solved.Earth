@@ -1,8 +1,14 @@
 import 'package:app/models/tree_model.dart';
+import 'package:app/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
 class TreeDesignPage extends StatelessWidget {
-  const TreeDesignPage({super.key});
+  const TreeDesignPage({
+    super.key,
+    /*required this.treeModel*/
+  });
+
+  //final TreeModel? treeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +27,20 @@ class TreeDesignPage extends StatelessWidget {
           itemBuilder: (context, index) {
             return Stack(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(treeModelList[index].thumbnailUrl),
+                InkWell(
+                  onTap: () {
+                    //print("Clicked ${treeModelList[index].id}!");
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MainPage(index: index),
+                        ));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(treeModelList[index].thumbnailUrl),
+                      ),
                     ),
                   ),
                 ),

@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
 class SideBar extends StatefulWidget {
-  const SideBar({super.key});
+  const SideBar({
+    super.key,
+  });
 
   @override
   State<SideBar> createState() => _SideBarState();
@@ -38,7 +40,7 @@ class _SideBarState extends State<SideBar> {
           baseStyle: _baseStyle,
           selectedStyle: _selectedStyle,
         ),
-        const MainPage(),
+        MainPage(),
       ),
 
       ScreenHiddenDrawer(
