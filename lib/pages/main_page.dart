@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:app/models/tree_model.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({
-    super.key,
-    //required this.treeModel,
-    required this.index,
-  });
+  MainPage(
+      {super.key,
 
-  //final TreeModel treeModel;
-  final int index;
+      //required this.index,
+      index});
+
+  //final int index;
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
