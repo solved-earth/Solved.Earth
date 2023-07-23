@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:app/models/tree_model.dart';
 
 class MainPage extends StatelessWidget {
-  MainPage(
-      {super.key,
+  const MainPage({
+    super.key,
 
-      //required this.index,
-      index});
+    //required this.index,
+  });
 
   //final int index;
-  int index = 0;
+  //int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class MainPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('lib/images/green_meadow.jpg'),
+            image: AssetImage('images/green_meadow.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -26,7 +25,7 @@ class MainPage extends StatelessWidget {
             // Background Image
             Positioned.fill(
               child: Image.asset(
-                'lib/images/green_meadow.jpg',
+                'images/green_meadow.jpg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -34,12 +33,11 @@ class MainPage extends StatelessWidget {
             Positioned(
               bottom: 10,
               left: 105.7,
-              child: /*Image.asset(
-                'lib/images/tree_illust.png',
+              child: Image.asset(
+                'images/tree_illust.png',
                 width: 200,
                 height: 200,
-              ),*/
-                  Image.network(treeModelList[index].thumbnailUrl),
+              ),
             ),
           ],
         ),
