@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class TreeDesignPage extends StatefulWidget {
   const TreeDesignPage({
     super.key,
+
     /*required this.treeModel*/
   });
 
@@ -11,8 +12,9 @@ class TreeDesignPage extends StatefulWidget {
   State<TreeDesignPage> createState() => _TreeDesignPageState();
 }
 
-class _TreeDesignPageState extends State<TreeDesignPage> {
-  //final TreeModel? treeModel;
+int selectedtreeindex = 0;
+
+class _TreeDesignPageState extends State<TreeDesignPage> with ChangeNotifier {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +34,8 @@ class _TreeDesignPageState extends State<TreeDesignPage> {
                 InkWell(
                   onTap: () {
                     print("Clicked ${treeModelList[index].id}!");
+                    selectedtreeindex = index;
+                    notifyListeners();
                   },
                   child: Container(
                     decoration: BoxDecoration(

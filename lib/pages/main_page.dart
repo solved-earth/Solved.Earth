@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:app/pages/tree_design_page.dart';
+import 'package:app/models/tree_model.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({
@@ -33,8 +35,8 @@ class MainPage extends StatelessWidget {
             Positioned(
               bottom: 10,
               left: 105.7,
-              child: Image.asset(
-                'images/tree_illust.png',
+              child: Image(
+                image: AssetImage(treeModelList[selectedtreeindex].path),
                 width: 200,
                 height: 200,
               ),

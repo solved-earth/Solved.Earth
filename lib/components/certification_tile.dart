@@ -24,7 +24,7 @@ class _CertificationTileState extends State<CertificationTile> {
   Widget build(BuildContext context) {
     ChallengeModel challengeModel = Provider.of<ChallengeModel>(context);
 
-    Uint8List? file0; //오류 발생 시 _(언더바) 삭제
+    Uint8List? file0;
     final TextEditingController descriptionController = TextEditingController();
 
     void clearImage() {
@@ -90,7 +90,7 @@ class _CertificationTileState extends State<CertificationTile> {
                     );
                     setState(
                       () {
-                        file0 = file; //오류 발생 시 _(언더바) 삭제
+                        file0 = file;
                       },
                     );
                     postImage();
