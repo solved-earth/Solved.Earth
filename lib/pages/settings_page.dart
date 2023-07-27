@@ -38,6 +38,26 @@ class SettingsPage extends StatelessWidget {
               builder: (context) {
                 return Scaffold(
                   appBar: AppBar(
+                    title: const Text("공지사항"),
+                  ),
+                );
+              },
+            ),
+          ),
+          child: const Tile(
+            icon: Icons.campaign_outlined,
+            color: Colors.green,
+            text: "공지사항",
+          ),
+        ),
+        Gaps.v10,
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
                     title: const Text("버그 신고"),
                   ),
                 );
@@ -46,8 +66,48 @@ class SettingsPage extends StatelessWidget {
           ),
           child: const Tile(
             icon: Icons.bug_report_outlined,
-            color: Colors.green,
+            color: Colors.redAccent,
             text: "버그 신고",
+          ),
+        ),
+        Gaps.v10,
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text("서비스 이용약관"),
+                  ),
+                );
+              },
+            ),
+          ),
+          child: const Tile(
+            icon: Icons.article_outlined,
+            color: Colors.brown,
+            text: "서비스 이용약관",
+          ),
+        ),
+        Gaps.v10,
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text("개인정보 처리방침"),
+                  ),
+                );
+              },
+            ),
+          ),
+          child: const Tile(
+            icon: Icons.apps_outage,
+            color: Colors.teal,
+            text: "개인정보 처리방침",
           ),
         ),
         Gaps.v10,
@@ -70,26 +130,6 @@ class SettingsPage extends StatelessWidget {
             text: "오픈소스 라이선스",
           ),
         ),
-        Gaps.v10,
-        GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return Scaffold(
-                  appBar: AppBar(
-                    title: const Text("공지사항"),
-                  ),
-                );
-              },
-            ),
-          ),
-          child: const Tile(
-            icon: Icons.campaign_outlined,
-            color: Colors.brown,
-            text: "공지사항",
-          ),
-        )
       ],
     );
   }
