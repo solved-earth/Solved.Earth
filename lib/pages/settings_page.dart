@@ -1,6 +1,7 @@
 import 'package:app/Constants/gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:app/pages/authentication/sign_up_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -52,18 +53,18 @@ class SettingsPage extends StatelessWidget {
         ),
         Gaps.v10,
         GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return Scaffold(
-                  appBar: AppBar(
-                    title: const Text("버그 신고"),
-                  ),
-                );
-              },
-            ),
-          ),
+          onTap: () async {
+            final url = Uri.parse(
+              'https://docs.google.com/forms/d/e/1FAIpQLSckeLnESZUKqdkjAzkRZvKIaqkNC3azNiZ4SVlk6pzcthWbLQ/viewform',
+            );
+            if (await canLaunchUrl(url)) {
+              launchUrl(url, mode: LaunchMode.externalApplication);
+              // 크롬 브라우저에서 제대로 실행이 안 될 경우, launchUrl(url); 로 수정
+            } else {
+              // ignore: avoid_print
+              print("Can't launch $url");
+            }
+          },
           child: const Tile(
             icon: Icons.bug_report_outlined,
             color: Colors.redAccent,
