@@ -6,31 +6,87 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Gaps.v10,
-        Tile(
-          icon: Icons.person_outline,
-          color: Colors.purple,
-          text: "계정 연결",
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text("계정 연결"),
+                  ),
+                );
+              },
+            ),
+          ),
+          child: const Tile(
+            icon: Icons.person_outline,
+            color: Colors.purple,
+            text: "계정 연결",
+          ),
         ),
         Gaps.v10,
-        Tile(
-          icon: Icons.bug_report_outlined,
-          color: Colors.green,
-          text: "버그 신고",
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text("버그 신고"),
+                  ),
+                );
+              },
+            ),
+          ),
+          child: const Tile(
+            icon: Icons.bug_report_outlined,
+            color: Colors.green,
+            text: "버그 신고",
+          ),
         ),
         Gaps.v10,
-        Tile(
-          icon: Icons.policy_outlined,
-          color: Colors.blue,
-          text: "라이선스",
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text("라이선스"),
+                  ),
+                );
+              },
+            ),
+          ),
+          child: const Tile(
+            icon: Icons.policy_outlined,
+            color: Colors.blue,
+            text: "라이선스",
+          ),
         ),
         Gaps.v10,
-        Tile(
-          icon: Icons.campaign_outlined,
-          color: Colors.brown,
-          text: "공지사항",
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text("공지사항"),
+                  ),
+                );
+              },
+            ),
+          ),
+          child: const Tile(
+            icon: Icons.campaign_outlined,
+            color: Colors.brown,
+            text: "공지사항",
+          ),
         )
       ],
     );
