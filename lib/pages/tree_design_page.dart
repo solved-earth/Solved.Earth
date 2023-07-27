@@ -1,15 +1,20 @@
 import 'package:app/models/tree_model.dart';
-import 'package:app/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
-class TreeDesignPage extends StatelessWidget {
+class TreeDesignPage extends StatefulWidget {
   const TreeDesignPage({
     super.key,
+
     /*required this.treeModel*/
   });
 
-  //final TreeModel? treeModel;
+  @override
+  State<TreeDesignPage> createState() => _TreeDesignPageState();
+}
 
+int selectedtreeindex = 0;
+
+class _TreeDesignPageState extends State<TreeDesignPage> with ChangeNotifier {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,8 +22,7 @@ class TreeDesignPage extends StatelessWidget {
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image:
-                AssetImage('lib/images/landscape1.jpg'), //the background image
+            image: AssetImage('images/landscape1.jpg'), //the background image
             fit: BoxFit.cover,
           ),
         ),
@@ -29,17 +33,14 @@ class TreeDesignPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    //print("Clicked ${treeModelList[index].id}!");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MainPage(index: index),
-                        ));
+                    print("Clicked ${treeModelList[index].id}!");
+                    selectedtreeindex = index;
+                    notifyListeners();
                   },
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(treeModelList[index].thumbnailUrl),
+                        image: AssetImage(treeModelList[index].path),
                       ),
                     ),
                   ),

@@ -40,7 +40,7 @@ class _SideBarState extends State<SideBar> {
           baseStyle: _baseStyle,
           selectedStyle: _selectedStyle,
         ),
-        MainPage(),
+        const MainPage(),
       ),
 
       ScreenHiddenDrawer(
@@ -49,7 +49,7 @@ class _SideBarState extends State<SideBar> {
           baseStyle: _baseStyle,
           selectedStyle: _selectedStyle,
         ),
-        TreeDesignPage(),
+        const TreeDesignPage(),
       ),
 
       //achievement page
