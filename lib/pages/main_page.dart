@@ -5,12 +5,7 @@ import 'package:app/models/tree_model.dart';
 class MainPage extends StatelessWidget {
   const MainPage({
     super.key,
-
-    //required this.index,
   });
-
-  //final int index;
-  //int index = 0;
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:app/Constants/gaps.dart';
 import 'package:flutter/material.dart';
+import 'package:app/pages/authentication/sign_up_screen.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -14,11 +15,12 @@ class SettingsPage extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return Scaffold(
+                /*return Scaffold(
                   appBar: AppBar(
                     title: const Text("계정 연결"),
                   ),
-                );
+                );*/
+                return const SignUpScreen();
               },
             ),
           ),
@@ -56,7 +58,7 @@ class SettingsPage extends StatelessWidget {
               builder: (context) {
                 return Scaffold(
                   appBar: AppBar(
-                    title: const Text("라이선스"),
+                    title: const Text("오픈소스 라이선스"),
                   ),
                 );
               },
@@ -65,7 +67,7 @@ class SettingsPage extends StatelessWidget {
           child: const Tile(
             icon: Icons.policy_outlined,
             color: Colors.blue,
-            text: "라이선스",
+            text: "오픈소스 라이선스",
           ),
         ),
         Gaps.v10,

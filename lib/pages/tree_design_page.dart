@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 class TreeDesignPage extends StatefulWidget {
   const TreeDesignPage({
     super.key,
-
-    /*required this.treeModel*/
   });
 
   @override
@@ -38,12 +36,11 @@ class _TreeDesignPageState extends State<TreeDesignPage> with ChangeNotifier {
                     notifyListeners();
                   },
                   child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(treeModelList[index].path),
-                      ),
+                      decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(treeModelList[index].path),
                     ),
-                  ),
+                  )),
                 ),
                 Positioned(
                   left: 113.7,
