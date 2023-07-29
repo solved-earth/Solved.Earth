@@ -4,9 +4,9 @@ class ChallengeModel extends ChangeNotifier {
   final List _challenges = [
     // [challnge name, achievement condition, additional explanation, isAchieved, unique number]
     [
-      '커여운 고양이',
-      '고양이를 찾아 사진을 찍으세요',
-      '모든 고양이는 귀엽습니당',
+      '종이 컵 대신 머그컵을',
+      '종이컵이 아닌 머그컵을 사용하는 사진을 찍어주세요',
+      '2021년 대한민국에서 141,547톤의 일회용 컵이 생산되었습니다. 이는 아시아 코끼리 35,380마리와 비슷한 무게입니다. 심지어 아시아 코끼리는 전 세계에 약 15,000마리 밖에 없습니다.',
       false, //성공, 실패 여부 판단 ==>
       0,
     ],
