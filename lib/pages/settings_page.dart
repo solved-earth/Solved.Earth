@@ -92,16 +92,12 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
         Gaps.v10,
-        GestureDetector(
+        /*GestureDetector(
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) {
-                return Scaffold(
-                  appBar: AppBar(
-                    title: const Text("개인정보 처리방침"),
-                  ),
-                );
+                return const MyPdfViewer(pdfPath: 'documents/sample.pdf');
               },
             ),
           ),
@@ -110,7 +106,7 @@ class SettingsPage extends StatelessWidget {
             color: Colors.teal,
             text: "개인정보 처리방침",
           ),
-        ),
+        ),*/
         Gaps.v10,
         GestureDetector(
           onTap: () => Navigator.push(

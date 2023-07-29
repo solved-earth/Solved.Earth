@@ -5,6 +5,7 @@ import 'package:app/pages/authentication/login_screen.dart';
 import 'package:app/pages/authentication/widgets/username_screen.dart';
 import 'package:app/pages/authentication/widgets/auth_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:app/resources/auth_service.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -74,19 +75,22 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               Gaps.v16,
-              const AuthButton(
+              /*const AuthButton(
                 icon: FaIcon(
                   size: 30,
                   FontAwesomeIcons.apple,
                 ),
                 text: "Continue with Apple",
               ),
-              Gaps.v16,
-              const AuthButton(
-                icon: FaIcon(
-                  FontAwesomeIcons.google,
+              Gaps.v16,*/
+              GestureDetector(
+                onTap: () => AuthService().signInWithGoogle(),
+                child: const AuthButton(
+                  icon: FaIcon(
+                    FontAwesomeIcons.google,
+                  ),
+                  text: "Continue with Google",
                 ),
-                text: "Continue with Google",
               ),
               Gaps.v16,
               const AuthButton(
