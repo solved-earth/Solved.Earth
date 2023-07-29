@@ -1,10 +1,58 @@
-import 'package:app/Constants/gaps.dart';
+import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:app/Constants/gaps.dart';
 import 'package:app/pages/authentication/sign_up_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:app/resources/pdf_viewer.dart';
+import 'package:app/resources/tile.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
+
+  @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  String pathPDF = "";
+  String landscapePathPdf = "";
+
+  @override
+  void initState() {
+    super.initState();
+
+    fromAsset('documents/demo.pdf', 'demo.pdf').then((f) {
+      setState(() {
+        pathPDF = f.path;
+      });
+    });
+    fromAsset('documents/landscape.pdf', 'landscape.pdf').then((f) {
+      setState(() {
+        landscapePathPdf = f.path;
+      });
+    });
+  }
+
+  Future<File> fromAsset(String asset, String filename) async {
+    // To open from assets, you can copy them to the app storage folder, and the access them "locally"
+    Completer<File> completer = Completer();
+
+    try {
+      var dir = await getApplicationDocumentsDirectory();
+      File file = File("${dir.path}/$filename");
+      var data = await rootBundle.load(asset);
+      var bytes = data.buffer.asUint8List();
+      await file.writeAsBytes(bytes, flush: true);
+      completer.complete(file);
+    } catch (e) {
+      throw Exception('Error parsing asset file!');
+    }
+
+    return completer.future;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,18 +121,16 @@ class SettingsPage extends StatelessWidget {
         ),
         Gaps.v10,
         GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return Scaffold(
-                  appBar: AppBar(
-                    title: const Text("서비스 이용약관"),
-                  ),
-                );
-              },
-            ),
-          ),
+          onTap: () {
+            if (pathPDF.isNotEmpty) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PDFScreen(path: pathPDF),
+                ),
+              );
+            }
+          },
           child: const Tile(
             icon: Icons.article_outlined,
             color: Colors.brown,
@@ -92,21 +138,23 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
         Gaps.v10,
-        /*GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const MyPdfViewer(pdfPath: 'documents/sample.pdf');
-              },
-            ),
-          ),
+        GestureDetector(
+          onTap: () {
+            if (landscapePathPdf.isNotEmpty) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PDFScreen(path: landscapePathPdf),
+                ),
+              );
+            }
+          },
           child: const Tile(
             icon: Icons.apps_outage,
             color: Colors.teal,
             text: "개인정보 처리방침",
           ),
-        ),*/
+        ),
         Gaps.v10,
         GestureDetector(
           onTap: () => Navigator.push(
@@ -128,49 +176,6 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class Tile extends StatelessWidget {
-  final IconData icon;
-  final Color color;
-  final String text;
-
-  const Tile({
-    required this.icon,
-    required this.color,
-    super.key,
-    required this.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Container(
-        height: 50,
-        width: 50,
-        decoration: BoxDecoration(
-          color: color.withOpacity(0.2),
-          borderRadius: BorderRadius.circular(18),
-        ),
-        child: Icon(
-          icon,
-          color: color,
-        ),
-      ),
-      title: Text(
-        text,
-        style: const TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 17,
-        ),
-      ),
-      trailing: const Icon(
-        Icons.arrow_forward_ios_outlined,
-        color: Colors.black,
-        size: 20,
-      ),
     );
   }
 }
