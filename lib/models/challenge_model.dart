@@ -26,14 +26,21 @@ class ChallengeModel extends ChangeNotifier {
     ],
   ];
 
+  //achieved challenge list
   final List _achievements = [];
 
   List get challenges => _challenges;
   List get achievements => _achievements;
 
+  //make challenge clear
   void clearChallenge(int index) {
     _challenges[index][3] = true;
     _achievements.add(_challenges[index]);
     notifyListeners();
   } // 성공 표시를 위한 로직
+
+  //return number of achieved challenge
+  int numberofAchienements() {
+    return _achievements.length;
+  }
 }
