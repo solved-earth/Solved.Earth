@@ -1,15 +1,13 @@
-import 'package:app/models/challenge_model.dart';
 import 'package:app/side_menu/sidebar.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
-//import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(
-    const MyApp(),
+    const ProviderScope(child: MyApp()),
   );
 }
 
@@ -23,13 +21,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ChallengeModel(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: const SideBar(),
-        theme: ThemeData(primarySwatch: Colors.lightGreen),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const SideBar(),
+      theme: ThemeData(primarySwatch: Colors.lightGreen),
     );
   }
 }

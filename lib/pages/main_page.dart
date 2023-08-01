@@ -1,8 +1,11 @@
+import 'package:app/models/challenge_model.dart';
 import 'package:flutter/material.dart';
 import 'package:app/pages/tree_design_page.dart';
 import 'package:app/models/tree_model.dart';
-import 'package:app/models/challenge_model.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final challengeModelProvider =
+    ChangeNotifierProvider<ChallengeModel>((ref) => ChallengeModel());
 
 class MainPage extends StatefulWidget {
   const MainPage({
@@ -38,10 +41,11 @@ class _MainPageState extends State<MainPage> {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 20),
-                child: Consumer<ChallengeModel>(
-                  builder: (context, challengeModel, _) {
-                    final int numberofAchievements =
-                        challengeModel.numberofAchienements();
+                child: Consumer(
+                  builder: (context, WidgetRef ref, _) {
+                    final int numberofAchievements = ref
+                        .read(challengeModelProvider)
+                        .numberofAchienements(); // 오류 수정
                     return Image(
                       image: AssetImage(treeModelList[selectedtreeindex].path),
                       //make tree bigger

@@ -1,6 +1,5 @@
 // ignore_for_file: empty_constructor_bodies
 
-import 'package:app/pages/main_page.dart';
 import 'package:app/view_models/signup_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
