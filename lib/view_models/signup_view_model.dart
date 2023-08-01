@@ -12,12 +12,19 @@ class SignUpViewModel extends AsyncNotifier<void> {
   }
 
   Future<void> signUp() async {
+    state = const AsyncValue.loading();
     final form = ref.read(signUpForm);
-    _authRepo.signUp(
-      form["email"],
-      form["password"],
+    state = await AsyncValue.guard(
+      () async => await _authRepo.signUp(
+        form["email"],
+        form["password"],
+      ),
     );
   }
 }
 
 final signUpForm = StateProvider((ref) => {});
+
+final signUpProvider = AsyncNotifierProvider<SignUpViewModel, void>(
+  () => SignUpViewModel(),
+);
