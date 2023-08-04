@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
 class SideBar extends StatefulWidget {
+  static String routename = "/";
   const SideBar({
     super.key,
   });

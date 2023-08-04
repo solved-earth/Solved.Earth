@@ -9,7 +9,9 @@ import 'package:app/view_models/signup_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class EmailScreen extends ConsumerStatefulWidget {
-  const EmailScreen({super.key});
+  final String username;
+
+  const EmailScreen({super.key, required this.username});
 
   @override
   ConsumerState<EmailScreen> createState() => _EmailScreenState();
@@ -79,9 +81,9 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Gaps.v40,
-              const Text(
-                "What is your Email?",
-                style: TextStyle(
+              Text(
+                "What is your Email, ${widget.username}?",
+                style: const TextStyle(
                   fontSize: Sizes.size24,
                   fontWeight: FontWeight.w700,
                 ),

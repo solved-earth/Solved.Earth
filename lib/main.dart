@@ -1,7 +1,8 @@
-import 'package:app/side_menu/sidebar.dart';
+//import 'package:app/side_menu/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:app/resources/router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,9 +22,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
-      home: const SideBar(),
+      //home: const SideBar(),
       theme: ThemeData(primarySwatch: Colors.lightGreen),
     );
   }
