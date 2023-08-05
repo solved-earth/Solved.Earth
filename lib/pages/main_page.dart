@@ -8,6 +8,7 @@ final challengeModelProvider =
     ChangeNotifierProvider<ChallengeModel>((ref) => ChallengeModel());
 
 class MainPage extends StatefulWidget {
+  static String routename = "/mainpage";
   const MainPage({
     super.key,
   });

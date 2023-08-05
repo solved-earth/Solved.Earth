@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/resources/authentication_repo.dart';
@@ -7,6 +8,7 @@ import 'package:app/utils/utils.dart';
 
 class LoginViewModel extends AsyncNotifier<void> {
   late final AuthenticationRepository _repository;
+  int count = 0;
 
   @override
   FutureOr<void> build() {
@@ -25,7 +27,23 @@ class LoginViewModel extends AsyncNotifier<void> {
     if (state.hasError) {
       showFirebaseErrorSnack(context, state.error);
     } else {
-      //context.go("/home");
+      //context.go("/mainpage");
+      Navigator.of(context).popUntil((_) => count++ >= 3);
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          Future.delayed(const Duration(milliseconds: 1500), () {
+            Navigator.of(context).pop(true);
+          });
+          return const CupertinoAlertDialog(
+            title: Text(
+              textAlign: TextAlign.center,
+              'You are signed in!',
+            ),
+          );
+        },
+      );
     }
   }
 }
