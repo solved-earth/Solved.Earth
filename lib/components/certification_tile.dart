@@ -40,7 +40,7 @@ class _CertificationTileState extends State<CertificationTile> {
         void handleTap() {
           bool isAchieved = challengeModel.challenges[widget.index][3];
           if (isAchieved) {
-            //
+            // !isAchived로 수정해서 else문 삭제
           } else {
             challengeModel.clearChallenge(widget.index);
           }

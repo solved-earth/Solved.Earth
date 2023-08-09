@@ -30,6 +30,9 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
+  String currentUserUid =
+      FirebaseAuth.instance.currentUser?.uid ?? 'No user signed in';
+
   Future<void> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleSignInAccount =
@@ -41,6 +44,7 @@ class AuthService {
         idToken: googleSignInAuthentication.idToken,
       );
       await _auth.signInWithCredential(credential);
+      print('Current user UID: $currentUserUid');
     } on FirebaseAuthException catch (e) {
       print(e.message);
       rethrow;

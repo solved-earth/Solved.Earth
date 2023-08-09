@@ -6,7 +6,12 @@ import 'package:app/pages/authentication/widgets/login_form_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:app/resources/auth_service.dart';
 
-class LoginScreen extends StatelessWidget {
+import 'package:flutter/cupertino.dart';
+
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:app/resources/authentication_repo.dart';
+
+class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
 
   void onSignUpTap(BuildContext context) {
@@ -22,7 +27,7 @@ class LoginScreen extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("계정 로그인하기"),
@@ -34,7 +39,7 @@ class LoginScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Gaps.v56,
+              Gaps.v24,
               const Text(
                 'Log in to EcoTreeGrowing!',
                 style: TextStyle(
@@ -51,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              Gaps.v40,
+              Gaps.v10,
               GestureDetector(
                 onTap: () => _onEmailLoginTap(context),
                 child: const AuthButton(
@@ -69,7 +74,26 @@ class LoginScreen extends StatelessWidget {
               ),
               Gaps.v16,*/
               GestureDetector(
-                onTap: () => AuthService().signInWithGoogle(),
+                onTap: () => {
+                  showCupertinoDialog(
+                    context: context,
+                    builder: (context) {
+                      return CupertinoAlertDialog(
+                        title: const Text("This method isn't available yet"),
+                        content: const Text("Will be updated"),
+                        actions: [
+                          CupertinoDialogAction(
+                              isDefaultAction: true,
+                              child: const Text("확인"),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              })
+                        ],
+                      );
+                    },
+                  ),
+                },
+                // AuthService().signInWithGoogle(),
                 child: const AuthButton(
                   icon: FaIcon(
                     FontAwesomeIcons.google,
@@ -78,11 +102,91 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               Gaps.v16,
-              const AuthButton(
-                icon: FaIcon(
-                  FontAwesomeIcons.facebook,
+              GestureDetector(
+                onTap: () => {
+                  showCupertinoDialog(
+                    context: context,
+                    builder: (context) {
+                      return CupertinoAlertDialog(
+                        title: const Text("This method isn't available yet"),
+                        content: const Text("Will be updated"),
+                        actions: [
+                          CupertinoDialogAction(
+                              isDefaultAction: true,
+                              child: const Text("확인"),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              })
+                        ],
+                      );
+                    },
+                  ),
+                },
+                child: const AuthButton(
+                  icon: FaIcon(
+                    FontAwesomeIcons.facebook,
+                  ),
+                  text: "Continue with Facebook",
                 ),
-                text: "Continue with Facebook",
+              ),
+              Gaps.v16,
+              ListTile(
+                title: const Text("Log out (Android)"),
+                textColor: Colors.red,
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      icon: const FaIcon(FontAwesomeIcons.skull),
+                      title: const Text("Are you sure?"),
+                      content: const Text("Plx dont go"),
+                      actions: [
+                        IconButton(
+                          onPressed: () => {
+                            Navigator.of(context).pop(),
+                            //ref.read(authRepo).signOut(),
+                            //context.go("/"),
+                          },
+                          icon: const FaIcon(FontAwesomeIcons.car),
+                        ),
+                        TextButton(
+                          onPressed: () => ref
+                              .read(authRepo)
+                              .signOut(), //Navigator.of(context).pop(),
+                          child: const Text("Yes"),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+              Gaps.v5,
+              ListTile(
+                title: const Text("Log out (iOS / Bottom)"),
+                textColor: Colors.red,
+                onTap: () {
+                  showCupertinoModalPopup(
+                    context: context,
+                    builder: (context) => CupertinoActionSheet(
+                      title: const Text("Are you sure?"),
+                      message: const Text("Please dooooont gooooo"),
+                      actions: [
+                        CupertinoActionSheetAction(
+                          isDefaultAction: true,
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: const Text("Not log out"),
+                        ),
+                        CupertinoActionSheetAction(
+                          isDestructiveAction: true,
+                          onPressed: () => ref
+                              .read(authRepo)
+                              .signOut(), //Navigator.of(context).pop(),
+                          child: const Text("Yes plz."),
+                        )
+                      ],
+                    ),
+                  );
+                },
               ),
             ],
           ),

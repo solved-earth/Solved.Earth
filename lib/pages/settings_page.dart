@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:app/Constants/gaps.dart';
 import 'package:app/pages/authentication/sign_up_screen.dart';
@@ -9,7 +10,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:app/resources/pdf_viewer.dart';
 import 'package:app/resources/tile.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+
 class SettingsPage extends StatefulWidget {
+  // ConsumerWidget
   const SettingsPage({super.key});
 
   @override
@@ -56,8 +60,13 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
+    String currentUserName =
+        FirebaseAuth.instance.currentUser?.displayName ?? 'No user signed in';
+
     return Column(
       children: [
+        Gaps.v10,
+        Text("Hello, $currentUserName"),
         Gaps.v10,
         GestureDetector(
           onTap: () => Navigator.push(

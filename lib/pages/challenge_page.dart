@@ -6,7 +6,6 @@ class ChallengePage extends StatelessWidget {
   final String challngeName;
   final String achievementCondition;
   final String additionalExplanation;
-
   final int index;
 
   const ChallengePage({
