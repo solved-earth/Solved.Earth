@@ -4,15 +4,16 @@ import 'package:app/constants/sizes.dart';
 import 'package:app/pages/authentication/widgets/auth_button.dart';
 import 'package:app/pages/authentication/widgets/login_form_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:app/resources/auth_service.dart';
+//import 'package:app/resources/auth_service.dart';
 
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/resources/authentication_repo.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends ConsumerWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
 
   void onSignUpTap(BuildContext context) {
     Navigator.of(context).pop();
@@ -25,6 +26,8 @@ class LoginScreen extends ConsumerWidget {
       ),
     );
   }
+
+  final User? currentUser = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -58,7 +61,30 @@ class LoginScreen extends ConsumerWidget {
               ),
               Gaps.v10,
               GestureDetector(
-                onTap: () => _onEmailLoginTap(context),
+                onTap: () => {
+                  currentUser != null
+                      ? {
+                          showCupertinoDialog(
+                            context: context,
+                            builder: (context) {
+                              return CupertinoAlertDialog(
+                                title: const Text("You're already logged in"),
+                                content:
+                                    const Text("Please log out and try again"),
+                                actions: [
+                                  CupertinoDialogAction(
+                                      isDefaultAction: true,
+                                      child: const Text("확인"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      })
+                                ],
+                              );
+                            },
+                          ),
+                        }
+                      : _onEmailLoginTap(context),
+                },
                 child: const AuthButton(
                   icon: FaIcon(FontAwesomeIcons.user),
                   text: "Use email & password",

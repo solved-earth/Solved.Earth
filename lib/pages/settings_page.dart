@@ -78,7 +78,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     title: const Text("계정 연결"),
                   ),
                 );*/
-                return const SignUpScreen();
+                return SignUpScreen();
               },
             ),
           ),
