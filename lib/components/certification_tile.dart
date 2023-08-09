@@ -7,6 +7,8 @@ import 'package:app/models/challenge_model.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:app/utils/utils.dart';
 import 'package:app/resources/image_store_methods.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
 class CertificationTile extends StatefulWidget {
   final int index;
@@ -21,6 +23,8 @@ class CertificationTile extends StatefulWidget {
 }
 
 class _CertificationTileState extends State<CertificationTile> {
+  final User? currentUser = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Consumer(
@@ -75,7 +79,26 @@ class _CertificationTileState extends State<CertificationTile> {
         _imageSelect(BuildContext context) async {
           bool isAchieved = challengeModel.challenges[widget.index][3];
 
-          if (isAchieved) {
+          if (currentUser == null) {
+            showCupertinoDialog(
+              context: context,
+              builder: (context) {
+                return CupertinoAlertDialog(
+                  title: const Text(
+                      "You have to log in before you submit the image"),
+                  content: const Text("Please log in and try again"),
+                  actions: [
+                    CupertinoDialogAction(
+                        isDefaultAction: true,
+                        child: const Text("확인"),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        })
+                  ],
+                );
+              },
+            );
+          } else if (isAchieved) {
             return showSnackBar('이미 성공한 도전과제 입니다.', context);
           } else {
             return showDialog(

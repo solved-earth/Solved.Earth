@@ -11,8 +11,7 @@ class SignUpViewModel extends AsyncNotifier<void> {
   late final AuthenticationRepository _authRepo;
   int count = 0;
 
-  String currentUserUid =
-      FirebaseAuth.instance.currentUser?.uid ?? 'No user signed in';
+  //String currentUserUid = FirebaseAuth.instance.currentUser?.uid ?? 'No user signed in';
 
   @override
   FutureOr<void> build() {
@@ -48,7 +47,7 @@ class SignUpViewModel extends AsyncNotifier<void> {
           );
         },
       );
-      print('Current user UID: $currentUserUid');
+      //print('Current user UID: $currentUserUid');
     }
   }
 }
