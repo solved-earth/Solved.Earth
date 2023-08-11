@@ -56,10 +56,16 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:uuid/uuid.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app/models/post_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ImageStoreMethods {
   final FirebaseStorage _storage = FirebaseStorage.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  String currentUserUid = FirebaseAuth.instance.currentUser?.uid ??
+      'No user signed in'; // !! else 영역 가다듬기
+
+  //print('Current user UID: $currentUserUid');
 
   Future<String> imageToStorage(Uint8List file) async {
     String id = const Uuid().v1();

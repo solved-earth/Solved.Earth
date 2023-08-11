@@ -1,19 +1,21 @@
 // ignore_for_file: empty_constructor_bodies
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/constants/sizes.dart';
 import 'package:app/constants/gaps.dart';
 import 'package:app/pages/authentication/widgets/form_button.dart';
 import 'package:app/pages/authentication/widgets/email_screen.dart';
+import 'package:app/view_models/signup_view_model.dart';
 
-class UserNameScreen extends StatefulWidget {
+class UserNameScreen extends ConsumerStatefulWidget {
   const UserNameScreen({super.key});
 
   @override
-  State<UserNameScreen> createState() => _UserNameScreenState();
+  ConsumerState<UserNameScreen> createState() => _UserNameScreenState();
 }
 
-class _UserNameScreenState extends State<UserNameScreen> {
+class _UserNameScreenState extends ConsumerState<UserNameScreen> {
   final TextEditingController _usernameController = TextEditingController();
 
   String _username = "";
@@ -38,6 +40,7 @@ class _UserNameScreenState extends State<UserNameScreen> {
 
   void _onNextTap() {
     if (_username.isEmpty) return;
+    ref.read(signUpForm.notifier).state = {"name": _username};
     Navigator.push(
       context,
       MaterialPageRoute(

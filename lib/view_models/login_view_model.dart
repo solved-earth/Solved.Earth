@@ -5,13 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/resources/authentication_repo.dart';
 import 'package:app/utils/utils.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginViewModel extends AsyncNotifier<void> {
   late final AuthenticationRepository _repository;
   int count = 0;
-
-  //String currentUserUid = FirebaseAuth.instance.currentUser?.uid ?? 'No user signed in';
 
   @override
   FutureOr<void> build() {
@@ -47,7 +44,6 @@ class LoginViewModel extends AsyncNotifier<void> {
           );
         },
       );
-      //print('Current user UID: $currentUserUid');
     }
   }
 }
