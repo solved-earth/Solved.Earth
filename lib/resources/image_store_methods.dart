@@ -53,26 +53,29 @@ class ImageStoreMethods {
 import 'dart:typed_data';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app/models/post_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:app/components/certification_tile.dart';
 
 class ImageStoreMethods {
   final FirebaseStorage _storage = FirebaseStorage.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  //int index = ref.watch(indexProvider);
 
-  String currentUserUid = FirebaseAuth.instance.currentUser?.uid ??
-      'No user signed in'; // !! else 영역 가다듬기
+  late int index;
 
-  //print('Current user UID: $currentUserUid');
+  String currentUserUid = FirebaseAuth.instance.currentUser!.uid;
 
-  Future<String> imageToStorage(Uint8List file) async {
+  Future<String> imageToStorage(Uint8List file, int index) async {
     String id = const Uuid().v1();
+
     // !! need to receive $userId and $challengeId
     Reference ref = _storage
         .ref()
-        .child('posts')
+        .child('users/$currentUserUid/${index.toString()}/')
         .child(id); // To specify the folder names for the post and post id
     // !! _storage.ref().child("users/" + $userId + $challengeId + id);
 
@@ -85,20 +88,27 @@ class ImageStoreMethods {
     return downloadUrl;
   }
 
-  Future<String> uploadPost(String description, Uint8List file) async {
+  Future<String> uploadPost(
+      String description, Uint8List file, int index) async {
     String res = 'Some Error Occurred';
+
+    //int index = ref.watch(indexProvider);
     try {
-      String photoUrl = await imageToStorage(file);
+      String photoUrl = await imageToStorage(file, index);
       String postId = const Uuid().v1();
+
       Post post = Post(
         //description: description,
         postId: postId,
         datePublished: DateTime.now(),
         postUrl: photoUrl,
       );
-      _firestore.collection('posts').doc(postId).set(
+      _firestore
+          .collection('users/$currentUserUid/${index.toString()}/')
+          .doc(postId)
+          .set(
             post.toJson(),
-          );
+          ); // ! currentUserUid 에서 문제 발생 시 index를 certification_tile 에서 받아온 방법 사용
       res = 'success';
     } catch (err) {
       res = err.toString();

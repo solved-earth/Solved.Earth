@@ -10,7 +10,7 @@ import 'package:app/resources/image_store_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
-class CertificationTile extends StatefulWidget {
+class CertificationTile extends ConsumerStatefulWidget {
   final int index;
 
   const CertificationTile({
@@ -19,14 +19,17 @@ class CertificationTile extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CertificationTile> createState() => _CertificationTileState();
+  ConsumerState<CertificationTile> createState() => _CertificationTileState();
 }
 
-class _CertificationTileState extends State<CertificationTile> {
+class _CertificationTileState extends ConsumerState<CertificationTile>
+    with ChangeNotifier {
   final User? currentUser = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
+    //final indexProvider = Provider<int>((ref) => [widget.index][4]);
+
     return Consumer(
       builder: (context, watch, _) {
         ChallengeModel challengeModel = watch.read(challengeModelProvider);
@@ -55,9 +58,10 @@ class _CertificationTileState extends State<CertificationTile> {
           setState(() {
             isLoading = true;
           });
+
           try {
-            String res = await ImageStoreMethods()
-                .uploadPost(descriptionController.text, file0!);
+            String res = await ImageStoreMethods().uploadPost(
+                descriptionController.text, file0!, [widget.index][4]);
             if (res == 'success') {
               handleTap();
               setState(() {
