@@ -61,7 +61,9 @@ class _CertificationTileState extends ConsumerState<CertificationTile>
 
           try {
             String res = await ImageStoreMethods().uploadPost(
-                descriptionController.text, file0!, [widget.index][4]);
+                descriptionController.text,
+                file0!,
+                challengeModel.challenges[widget.index][4]);
             if (res == 'success') {
               handleTap();
               setState(() {
