@@ -1,4 +1,5 @@
 import 'package:app/models/tree_model.dart';
+import 'package:app/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class TreeDesignPage extends StatefulWidget {
@@ -31,7 +32,9 @@ class _TreeDesignPageState extends State<TreeDesignPage> with ChangeNotifier {
               children: [
                 InkWell(
                   onTap: () {
-                    print("Clicked ${treeModelList[index].id}!");
+                    showSnackBar(
+                        "${treeModelList[index].id}번째 나무로 변경되었습니다!", context);
+                    //print("Clicked ${treeModelList[index].id}!");
                     selectedtreeindex = index;
                     notifyListeners();
                   },
