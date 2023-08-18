@@ -1,4 +1,3 @@
-//import 'package:app/side_menu/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,6 +8,7 @@ void main() async {
   await Firebase.initializeApp();
 
   runApp(
+    // Wrap the app with the ProviderScope from Riverpod.
     const ProviderScope(child: MyApp()),
   );
 }
@@ -23,10 +23,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    // Create MaterialApp with custom router configuration.
     return MaterialApp.router(
       routerConfig: router,
       debugShowCheckedModeBanner: false,
-      //home: const SideBar(),
       theme: ThemeData(primarySwatch: Colors.lightGreen),
     );
   }
