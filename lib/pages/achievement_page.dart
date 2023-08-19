@@ -12,28 +12,34 @@ class AchievementPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(child: Consumer(
-            builder: (context, watch, child) {
-              final value = watch.read(challengeModelProvider);
-              return GridView.builder(
-                //value == challenge model
-                itemCount: value.achievements.length,
-                padding: const EdgeInsets.all(12),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1 / 1.2,
-                ),
-                itemBuilder: (context, index) {
-                  return AchievementTile(
-                    challgeName: value.achievements[index][0],
-                    achievementCondition: value.achievements[index][1],
-                    additionalExplanation: value.achievements[index][2],
-                    index: value.achievements[index][4],
-                  ); //AchievementTile == 네모 하나(좌측 상단, 우측 상단, 좌측 하단, 우측 하단)
-                },
-              );
-            },
-          ))
+          Expanded(
+            child: Consumer(
+              builder: (context, watch, child) {
+                final challengeModel = watch.read(challengeModelProvider);
+                return GridView.builder(
+                  itemCount: challengeModel.achievements.length,
+                  padding: const EdgeInsets.all(12),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 1 / 1.2,
+                  ),
+                  itemBuilder: (context, index) {
+                    //display individual achievement tiles
+                    return AchievementTile(
+                      challgeName: challengeModel.achievements[index]
+                          [0], // Challenge name
+                      achievementCondition: challengeModel.achievements[index]
+                          [1], // Condition description
+                      additionalExplanation: challengeModel.achievements[index]
+                          [2], // Additional explanation
+                      index: challengeModel.achievements[index]
+                          [4], // Index of the achievement
+                    );
+                  },
+                );
+              },
+            ),
+          )
         ],
       ),
     );
