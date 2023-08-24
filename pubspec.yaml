@@ -46,6 +46,7 @@ dependencies:
   flutter_facebook_auth: ^6.0.0
   flutter_riverpod: ^2.3.6
   go_router: ^10.0.0
+  http: ^1.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
