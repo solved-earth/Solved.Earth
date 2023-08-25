@@ -4,6 +4,7 @@ import 'package:app/pages/tree_design_page.dart';
 import 'package:app/models/tree_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+//definition of challenge model provider
 final challengeModelProvider =
     ChangeNotifierProvider<ChallengeModel>((ref) => ChallengeModel());
 
@@ -49,7 +50,7 @@ class _MainPageState extends State<MainPage> {
                         .numberofAchienements(); // 오류 수정
                     return Image(
                       image: AssetImage(treeModelList[selectedtreeindex].path),
-                      //make tree bigger
+                      //make tree bigger according to the number of achievements
                       width: 200 + numberofAchievements * 100,
                       height: 200 + numberofAchievements * 100,
                     );

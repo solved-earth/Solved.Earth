@@ -19,59 +19,60 @@ class ChallengePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(challngeName),
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
+      appBar: AppBar(
+        title: Text(challngeName),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
 
-                //achievementCondition
-                Container(
-                  height: 160,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Center(
-                    child: Text(
-                      achievementCondition,
-                      textAlign: TextAlign.center,
-                    ),
+              //achievementCondition
+              Container(
+                height: 160,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Center(
+                  child: Text(
+                    achievementCondition,
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                Gaps.v24,
+              ),
+              Gaps.v24,
 
-                //인증 버튼
-                CertificationTile(index: index),
-                const SizedBox(
-                  height: 24,
-                ),
+              //certification tile
+              CertificationTile(index: index),
+              const SizedBox(
+                height: 24,
+              ),
 
-                //additionalExplanation
-                Container(
-                  height: 220,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Center(
-                    child: Text(
-                      additionalExplanation,
-                      textAlign: TextAlign.center,
-                    ),
+              //additional Explanation
+              Container(
+                height: 220,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Center(
+                  child: Text(
+                    additionalExplanation,
+                    textAlign: TextAlign.center,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

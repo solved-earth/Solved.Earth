@@ -14,20 +14,25 @@ class ChallngeListPage extends StatelessWidget {
           Expanded(
             child: Consumer(
               builder: (context, watch, child) {
-                final value = watch.read(challengeModelProvider);
+                final challengeModel = watch
+                    .read(challengeModelProvider); //provider of challenge model
                 return GridView.builder(
-                  itemCount: value.challenges.length,
+                  itemCount: challengeModel.challenges.length,
                   padding: const EdgeInsets.all(12),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
-                    childAspectRatio: 5 / 1,
+                    childAspectRatio: 5 / 1, // aspect ratio
                   ),
                   itemBuilder: (context, index) {
                     return ChallengeListTile(
-                      challgeName: value.challenges[index][0],
-                      achievementCondition: value.challenges[index][1],
-                      additionalExplanation: value.challenges[index][2],
-                      index: value.challenges[index][4],
+                      challgeName: challengeModel.challenges[index]
+                          [0], //challenge name
+                      achievementCondition: challengeModel.challenges[index]
+                          [1], //achievement
+                      additionalExplanation: challengeModel.challenges[index]
+                          [2], //additional explanation
+                      index: challengeModel.challenges[index]
+                          [4], //index of the achievement
                     );
                   },
                 );

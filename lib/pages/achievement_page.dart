@@ -15,7 +15,8 @@ class AchievementPage extends StatelessWidget {
           Expanded(
             child: Consumer(
               builder: (context, watch, child) {
-                final challengeModel = watch.read(challengeModelProvider);
+                final challengeModel = watch
+                    .read(challengeModelProvider); //provider of challenge model
                 return GridView.builder(
                   itemCount: challengeModel.achievements.length,
                   padding: const EdgeInsets.all(12),
