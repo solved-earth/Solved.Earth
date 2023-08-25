@@ -50,17 +50,17 @@ class ImageStoreMethods {
   }
 }
 */
+import 'dart:io';
 import 'dart:typed_data';
 import 'dart:convert';
 
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:uuid/uuid.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app/models/post_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:app/components/certification_tile.dart';
+
 import 'package:http/http.dart' as http;
 
 class ImageStoreMethods {
@@ -103,7 +103,7 @@ class ImageStoreMethods {
 
     // Send the API request
     var response = await http.post(uri, body: {
-      'image': file, //! Uint8List가 아니라 원본 사진을 보내야 할 수도
+      'image': File.fromRawPath(file), //! Uint8List가 아니라 원본 사진을 보내야 할 수도
     });
 
     // Handle the API response
