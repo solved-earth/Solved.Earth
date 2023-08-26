@@ -8,6 +8,7 @@ import 'package:uuid/uuid.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app/models/post_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:app/utils/utils.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:http_parser/src/media_type.dart';
@@ -120,7 +121,8 @@ class ImageStoreMethods {
         }
         return res;
       } else {
-        return responseBodyMap["missing"]; // Returns missing values
+        res = responseBodyMap["missing"].toString();
+        return res; // Returns missing values
       }
     } else {
       return neterror;
