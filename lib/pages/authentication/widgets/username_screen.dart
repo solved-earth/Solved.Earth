@@ -56,7 +56,7 @@ class _UserNameScreenState extends ConsumerState<UserNameScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Sign up",
+          "가입하기",
         ),
       ),
       body: Padding(
@@ -66,7 +66,7 @@ class _UserNameScreenState extends ConsumerState<UserNameScreen> {
           children: [
             Gaps.v40,
             const Text(
-              "Create username",
+              "유저명을 입력해주세요",
               style: TextStyle(
                 fontSize: Sizes.size24,
                 fontWeight: FontWeight.w700,
@@ -74,7 +74,7 @@ class _UserNameScreenState extends ConsumerState<UserNameScreen> {
             ),
             Gaps.v8,
             const Text(
-              "You can always change this later.",
+              "유저명은 언제든지 변경할 수 있습니다.",
               style: TextStyle(
                 fontSize: Sizes.size16,
                 color: Colors.black54,
@@ -84,7 +84,7 @@ class _UserNameScreenState extends ConsumerState<UserNameScreen> {
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(
-                hintText: "Username",
+                hintText: "유저명",
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.grey.shade400,

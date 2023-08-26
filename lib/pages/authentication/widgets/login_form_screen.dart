@@ -32,7 +32,7 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Log in'),
+        title: const Text('로그인하기'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -45,7 +45,7 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
                 Gaps.v28,
                 TextFormField(
                   decoration: InputDecoration(
-                    hintText: 'Email',
+                    hintText: '이메일',
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.grey.shade400,
@@ -59,7 +59,7 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
                   ),
                   validator: (value) {
                     if (value != null && value.isEmpty) {
-                      return "I don't like your Email";
+                      return "유효하지 않은 이메일입니다.";
                     }
                     return null;
                   },
@@ -72,7 +72,7 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
                 Gaps.v16,
                 TextFormField(
                   decoration: InputDecoration(
-                    hintText: 'Password',
+                    hintText: '비밀번호',
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.grey.shade400,
@@ -86,7 +86,7 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
                   ),
                   validator: (value) {
                     if (value != null && value.isEmpty) {
-                      return "Wrong password";
+                      return "잘못된 비밀번호입니다.";
                     }
                     return null;
                   },
@@ -101,7 +101,7 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
                   onTap: _onSubmitTap,
                   child: FormButton(
                     disabled: ref.watch(loginProvider).isLoading,
-                    text: "Log in",
+                    text: "로그인",
                   ),
                 ),
               ],

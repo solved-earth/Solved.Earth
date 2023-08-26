@@ -44,22 +44,25 @@ class LoginScreen extends ConsumerWidget {
             children: [
               Gaps.v24,
               const Text(
-                'Log in to EcoTreeGrowing!',
+                'Solved.Earth에 로그인하세요!',
                 style: TextStyle(
                   fontSize: Sizes.size24,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               Gaps.v20,
-              const Text(
-                'Manage yout account, check notifications, comment on videos, and more.',
-                style: TextStyle(
-                  fontSize: Sizes.size16,
-                  color: Colors.black45,
+              const SizedBox(
+                width: 300,
+                child: Text(
+                  '로그인해서 다양한 환경 챌린지들을 수행하고 나만의 나무를 키워보세요!',
+                  style: TextStyle(
+                    fontSize: Sizes.size16,
+                    color: Colors.black45,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
-              Gaps.v10,
+              Gaps.v20,
               GestureDetector(
                 onTap: () => {
                   currentUser != null
@@ -68,9 +71,8 @@ class LoginScreen extends ConsumerWidget {
                             context: context,
                             builder: (context) {
                               return CupertinoAlertDialog(
-                                title: const Text("You're already logged in"),
-                                content:
-                                    const Text("Please log out and try again"),
+                                title: const Text("이미 로그인 되어 있습니다."),
+                                content: const Text("로그아웃하고 나서 다시 시도해주세요."),
                                 actions: [
                                   CupertinoDialogAction(
                                       isDefaultAction: true,
@@ -87,7 +89,7 @@ class LoginScreen extends ConsumerWidget {
                 },
                 child: const AuthButton(
                   icon: FaIcon(FontAwesomeIcons.user),
-                  text: "Use email & password",
+                  text: "이메일과 비밀번호로 로그인하기",
                 ),
               ),
               Gaps.v16,
@@ -105,8 +107,8 @@ class LoginScreen extends ConsumerWidget {
                     context: context,
                     builder: (context) {
                       return CupertinoAlertDialog(
-                        title: const Text("This method isn't available yet"),
-                        content: const Text("Will be updated"),
+                        title: const Text("현재 지원되지 않는 방법입니다."),
+                        content: const Text("빠른 시일 내에 업데이트 하겠습니다."),
                         actions: [
                           CupertinoDialogAction(
                               isDefaultAction: true,
@@ -124,7 +126,7 @@ class LoginScreen extends ConsumerWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.google,
                   ),
-                  text: "Continue with Google",
+                  text: "구글로 로그인하기",
                 ),
               ),
               Gaps.v16,
@@ -134,8 +136,8 @@ class LoginScreen extends ConsumerWidget {
                     context: context,
                     builder: (context) {
                       return CupertinoAlertDialog(
-                        title: const Text("This method isn't available yet"),
-                        content: const Text("Will be updated"),
+                        title: const Text("현재 지원되지 않는 방법입니다."),
+                        content: const Text("빠른 시일 내에 업데이트 하겠습니다."),
                         actions: [
                           CupertinoDialogAction(
                               isDefaultAction: true,
@@ -152,11 +154,11 @@ class LoginScreen extends ConsumerWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.facebook,
                   ),
-                  text: "Continue with Facebook",
+                  text: "페이스북으로 로그인하기",
                 ),
               ),
               Gaps.v16,
-              ListTile(
+              /*ListTile(
                 title: const Text("Log out (Android)"),
                 textColor: Colors.red,
                 onTap: () {
@@ -186,28 +188,31 @@ class LoginScreen extends ConsumerWidget {
                   );
                 },
               ),
-              Gaps.v5,
+              Gaps.v5,*/
               ListTile(
-                title: const Text("Log out (iOS / Bottom)"),
+                title: const Text(
+                  "로그아웃",
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
                 textColor: Colors.red,
                 onTap: () {
                   showCupertinoModalPopup(
                     context: context,
                     builder: (context) => CupertinoActionSheet(
-                      title: const Text("Are you sure?"),
-                      message: const Text("Please dooooont gooooo"),
+                      title: const Text("정말 로그아웃 하시겠습니까?"),
+                      message: const Text("챌린지 인증은 로그인 상태에서만 가능합니다."),
                       actions: [
                         CupertinoActionSheetAction(
                           isDefaultAction: true,
                           onPressed: () => Navigator.of(context).pop(),
-                          child: const Text("Not log out"),
+                          child: const Text("취소"),
                         ),
                         CupertinoActionSheetAction(
                           isDestructiveAction: true,
                           onPressed: () => ref
                               .read(authRepo)
                               .signOut(), //Navigator.of(context).pop(),
-                          child: const Text("Yes plz."),
+                          child: const Text("확인"),
                         )
                       ],
                     ),
@@ -229,7 +234,7 @@ class LoginScreen extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Don't have an account?",
+                "가입하신 계정이 없나요?",
                 style: TextStyle(
                   fontSize: Sizes.size16,
                 ),
@@ -238,7 +243,7 @@ class LoginScreen extends ConsumerWidget {
               GestureDetector(
                 onTap: () => onSignUpTap(context),
                 child: Text(
-                  'Sign up',
+                  '가입하기',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).primaryColor,

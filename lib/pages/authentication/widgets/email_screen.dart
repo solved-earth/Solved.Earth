@@ -45,7 +45,7 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
     final regExp = RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
     if (!regExp.hasMatch(_email)) {
-      return "Email not valid";
+      return "유효한 이메일 주소가 아닙니다.";
     }
     return null;
   }
@@ -73,7 +73,7 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Sign up",
+            "가입하기",
           ),
         ),
         body: Padding(
@@ -83,7 +83,7 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
             children: [
               Gaps.v40,
               Text(
-                "What is your Email, ${widget.username}?",
+                "이메일이 무엇인가요, ${widget.username}님?",
                 style: const TextStyle(
                   fontSize: Sizes.size24,
                   fontWeight: FontWeight.w700,
@@ -96,7 +96,7 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
                 autocorrect: false,
                 onEditingComplete: _onSubmit,
                 decoration: InputDecoration(
-                  hintText: "Email",
+                  hintText: "이메일",
                   errorText: _isEmailValid(),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
