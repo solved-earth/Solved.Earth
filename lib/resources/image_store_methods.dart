@@ -121,7 +121,7 @@ class ImageStoreMethods {
         }
         return res;
       } else {
-        res = responseBodyMap["missing"].toString();
+        res = 'Missing values: ${responseBodyMap["missing"].toString()}';
         return res; // Returns missing values
       }
     } else {
