@@ -96,7 +96,7 @@ class ImageStoreMethods {
     if (response.statusCode == 200) {
       //int index = ref.watch(indexProvider);
       //var response = await http.get(uri);
-      Map<String, dynamic> responseBodyMap = jsonDecode(response.body);
+      Map<String, dynamic> responseBodyMap = response.data;
       if (responseBodyMap["success"] == true) {
         try {
           String photoUrl = await imageToStorage(file, index);
@@ -120,7 +120,7 @@ class ImageStoreMethods {
         }
         return res;
       } else {
-        return responseBodyMap["reason"]; // Returns missing values
+        return responseBodyMap["missing"]; // Returns missing values
       }
     } else {
       return neterror;
