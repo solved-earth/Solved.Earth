@@ -116,6 +116,8 @@ class ImageStoreMethods {
     var response = await request.send();
     print('응답 상태 코드: ${response.statusCode}');
     print('응답 이유: ${response.reasonPhrase}');
+    print('응답 이유 2: ${response.isRedirect}');
+    print('응답 이유 3: ${response.headers}');
 
     // Handle the API response
     if (response.statusCode == 200) {
