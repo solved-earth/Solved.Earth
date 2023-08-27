@@ -27,9 +27,13 @@ class _CertificationTileState extends ConsumerState<CertificationTile>
   final User? currentUser = FirebaseAuth.instance.currentUser;
 
   @override
-  Widget build(BuildContext context) {
-    //final indexProvider = Provider<int>((ref) => [widget.index][4]);
+  void dispose() {
+    // Call the dispose method of the super class
+    super.dispose();
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Consumer(
       builder: (context, watch, _) {
         ChallengeModel challengeModel = watch.read(challengeModelProvider);
@@ -61,15 +65,19 @@ class _CertificationTileState extends ConsumerState<CertificationTile>
 
           try {
             String res = await ImageStoreMethods().uploadPost(
-                descriptionController.text,
-                file0!,
-                challengeModel.challenges[widget.index][4]);
+              descriptionController.text,
+              file0!,
+              challengeModel.challenges[widget.index][4],
+            );
+            print('$res 1');
+
+            if (!mounted) return;
             if (res == 'success') {
               handleTap();
               setState(() {
                 isLoading = false;
               });
-              showSnackBar('Posted', context);
+              showSnackBar('도전과제 성공!', context);
               clearImage();
             } else {
               setState(() {
