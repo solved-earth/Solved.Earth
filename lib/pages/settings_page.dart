@@ -64,9 +64,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    String currentUserName =
+    /*String currentUserName =
         FirebaseAuth.instance.currentUser?.displayName ?? 'No user signed in';
-    // ! Will be null if signing in anonymously or via password authentication. The UserName only shows up with using Social Authentication
+    // ! Will be null if signing in anonymously or via password authentication. The UserName only shows up with using Social Authentication*/
 
     final User? currentUser = FirebaseAuth.instance.currentUser;
 
