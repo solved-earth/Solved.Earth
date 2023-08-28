@@ -10,7 +10,7 @@ import 'package:app/resources/image_store_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
-class CertificationTile extends ConsumerStatefulWidget {
+class CertificationTile extends StatefulWidget {
   final int index;
 
   const CertificationTile({
@@ -19,11 +19,10 @@ class CertificationTile extends ConsumerStatefulWidget {
   }) : super(key: key);
 
   @override
-  ConsumerState<CertificationTile> createState() => _CertificationTileState();
+  State<CertificationTile> createState() => _CertificationTileState();
 }
 
-class _CertificationTileState extends ConsumerState<CertificationTile>
-    with ChangeNotifier {
+class _CertificationTileState extends State<CertificationTile> {
   final User? currentUser = FirebaseAuth.instance.currentUser;
 
   @override
@@ -69,7 +68,6 @@ class _CertificationTileState extends ConsumerState<CertificationTile>
               file0!,
               challengeModel.challenges[widget.index][4],
             );
-            print('$res 1');
 
             if (!mounted) return;
             if (res == 'success') {
