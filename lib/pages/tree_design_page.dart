@@ -13,7 +13,12 @@ class TreeDesignPage extends StatefulWidget {
 
 int selectedtreeindex = 0;
 
-class _TreeDesignPageState extends State<TreeDesignPage> with ChangeNotifier {
+class _TreeDesignPageState extends State<TreeDesignPage> {
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,9 +39,7 @@ class _TreeDesignPageState extends State<TreeDesignPage> with ChangeNotifier {
                   onTap: () {
                     showSnackBar(
                         "${treeModelList[index].id}번째 나무로 변경되었습니다!", context);
-                    //print("Clicked ${treeModelList[index].id}!");
                     selectedtreeindex = index;
-                    notifyListeners();
                   },
                   child: Container(
                       decoration: BoxDecoration(
