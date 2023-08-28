@@ -1,3 +1,8 @@
+# Appended
+.env
+Pipfile
+Pipfile.lock
+
 # Miscellaneous
 *.class
 *.log
@@ -31,7 +36,6 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-**/lib/resources/image_store_methods.dart
 
 # Symbolication related
 app.*.symbols
