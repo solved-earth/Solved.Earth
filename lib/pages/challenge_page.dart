@@ -3,22 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:app/Constants/gaps.dart';
 
 class ChallengePage extends StatelessWidget {
-  final String challngeName;
-  final String achievementCondition;
-  final String additionalExplanation;
-  final int index;
+  final String challngeName; //Name of the challenge
+  final String achievementCondition; // Condition of the challenge
+  final String
+      additionalExplanation; // Additional explanation about the challenge
+  final int index; // Index of the challenge
 
   const ChallengePage({
     super.key,
-    required this.challngeName,
-    required this.achievementCondition,
-    required this.additionalExplanation,
-    required this.index,
+    required this.challngeName, // Constructor parameters for challenge name
+    required this.achievementCondition, // Constructor parameters for ahievement condition
+    required this.additionalExplanation, // Constructor parameters for additional explanation about the challenge
+    required this.index, // Constructor parameters for index
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Show challenge name on title
       appBar: AppBar(
         title: Text(challngeName),
       ),
@@ -27,11 +29,8 @@ class ChallengePage extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
-
-              //achievementCondition
+              //show achievementCondition
+              Gaps.v20,
               Container(
                 height: 160,
                 width: double.infinity,
@@ -48,13 +47,13 @@ class ChallengePage extends StatelessWidget {
               ),
               Gaps.v24,
 
-              //certification tile
-              CertificationTile(index: index),
-              const SizedBox(
-                height: 24,
-              ),
+              //Rendering a certification tile component
+              CertificationTile(
+                  index:
+                      index), //this tile post image and get cretification of the challenges
+              Gaps.v24,
 
-              //additional Explanation
+              //show additional Explanation
               Container(
                 height: 220,
                 width: double.infinity,
