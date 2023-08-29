@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:app/models/scope.dart';
 import 'package:app/resources/oss_detail_view.dart';
 import 'package:app/resources/dismissible_view.dart';
-import 'package:app/resources/header.dart';
 import 'package:app/oss_licenses.dart';
 import 'package:app/resources/item.dart';
 import 'package:app/resources/exitable.dart';
