@@ -24,21 +24,24 @@ class SettingsPage extends ConsumerStatefulWidget {
 }
 
 class _SettingsPageState extends ConsumerState<SettingsPage> {
-  String pathPDF = "";
-  String landscapePathPdf = "";
+  String termsOfServicePathPDF = "";
+  String personalInfoPathPdf = "";
 
   @override
   void initState() {
     super.initState();
 
-    fromAsset('documents/demo.pdf', 'demo.pdf').then((f) {
+    fromAsset('documents/Terms_Of_Service.pdf', 'Terms_Of_Service.pdf')
+        .then((f) {
       setState(() {
-        pathPDF = f.path;
+        termsOfServicePathPDF = f.path;
       });
     });
-    fromAsset('documents/landscape.pdf', 'landscape.pdf').then((f) {
+    fromAsset('documents/Personal_Info_Process_Policy.pdf',
+            'Personal_Info_Process_Policy.pdf')
+        .then((f) {
       setState(() {
-        landscapePathPdf = f.path;
+        personalInfoPathPdf = f.path;
       });
     });
   }
@@ -160,11 +163,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 Gaps.v10,
                 GestureDetector(
                   onTap: () {
-                    if (pathPDF.isNotEmpty) {
+                    if (termsOfServicePathPDF.isNotEmpty) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PDFScreen(path: pathPDF),
+                          builder: (context) =>
+                              PDFScreen(path: termsOfServicePathPDF),
                         ),
                       );
                     }
@@ -178,12 +182,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 Gaps.v10,
                 GestureDetector(
                   onTap: () {
-                    if (landscapePathPdf.isNotEmpty) {
+                    if (personalInfoPathPdf.isNotEmpty) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              PDFScreen(path: landscapePathPdf),
+                              PDFScreen(path: personalInfoPathPdf),
                         ),
                       );
                     }
