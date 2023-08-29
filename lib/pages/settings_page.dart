@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:app/Constants/gaps.dart';
 import 'package:app/pages/authentication/sign_up_screen.dart';
+//import 'package:app/pages/open_source_licenses.dart';
+import 'package:app/resources/oss_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
@@ -202,11 +204,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return Scaffold(
-                          appBar: AppBar(
-                            title: const Text("오픈소스 라이선스"),
-                          ),
-                        );
+                        return const OSSView();
                       },
                     ),
                   ),

@@ -11,7 +11,7 @@ void main() async {
   await Firebase.initializeApp();
 
   runApp(
-    // Wrap the app with the ProviderScope from Riverpod.
+    // wrap the app with the ProviderScope from Riverpod.
     const ProviderScope(child: MyApp()),
   );
 }
@@ -26,7 +26,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // Create MaterialApp with custom router configuration.
+    // create MaterialApp with custom router configuration.
     return MaterialApp.router(
       routerConfig: router,
       debugShowCheckedModeBanner: false,

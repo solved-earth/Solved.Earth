@@ -1,3 +1,4 @@
+// class of the data of users that will be stored in the firestore database
 class UserProfileModel {
   final String uid;
   final String email;

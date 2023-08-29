@@ -1,5 +1,5 @@
+// class of the data of the accepted image that will be stored in the firebase storage
 class Post {
-  //final String description;
   final String postId;
   final datePublished;
   final String postUrl;

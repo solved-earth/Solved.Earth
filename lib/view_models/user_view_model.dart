@@ -33,7 +33,7 @@ class UsersViewModel extends AsyncNotifier<UserProfileModel> {
     String birthday = "",
   }) async {
     if (credential.user == null) {
-      throw Exception("Account not created");
+      throw Exception("계정이 생성되지 않았습니다");
     }
     state = const AsyncValue.loading();
     final profile = UserProfileModel(

@@ -27,7 +27,7 @@ class _CertificationTileState extends State<CertificationTile> {
 
   @override
   void dispose() {
-    // Call the dispose method of the super class
+    // call the dispose method of the super class
     super.dispose();
   }
 
@@ -41,22 +41,23 @@ class _CertificationTileState extends State<CertificationTile> {
         final TextEditingController descriptionController =
             TextEditingController();
 
+        // clears the selected image(file variable) by null
         void clearImage() {
           setState(() {
             file0 = null;
           });
         }
 
+        // change the status of a specific challenge whether it's acheived or not
         void handleTap() {
           bool isAchieved = challengeModel.challenges[widget.index][3];
-          if (isAchieved) {
-            // !isAchived로 수정해서 else문 삭제
-          } else {
+          if (!isAchieved) {
             challengeModel.clearChallenge(widget.index);
           }
         }
 
         bool isLoading = false;
+        // starts the procedure to evaluate the sellected image with calling uploadPost function
         void postImage() async {
           setState(() {
             isLoading = true;
@@ -91,14 +92,14 @@ class _CertificationTileState extends State<CertificationTile> {
         _imageSelect(BuildContext context) async {
           bool isAchieved = challengeModel.challenges[widget.index][3];
 
+          // shows a popup to direct the user to login for certifing challenges
           if (currentUser == null) {
             showCupertinoDialog(
               context: context,
               builder: (context) {
                 return CupertinoAlertDialog(
-                  title: const Text(
-                      "You have to log in before you submit the image"),
-                  content: const Text("Please log in and try again"),
+                  title: const Text("챌린지 인증을 하기 위해선 로그인을 먼저 해야 합니다."),
+                  content: const Text("로그인하고 나서 다시 시도해주세요."),
                   actions: [
                     CupertinoDialogAction(
                         isDefaultAction: true,
@@ -113,15 +114,16 @@ class _CertificationTileState extends State<CertificationTile> {
           } else if (isAchieved) {
             return showSnackBar('이미 성공한 도전과제 입니다.', context);
           } else {
+            // shows options whether to certify the selected challenge or not
             return showDialog(
               context: context,
               builder: (context) {
                 return SimpleDialog(
-                  title: const Text('Select Image'),
+                  title: const Text('인증할 사진을 고르세요'),
                   children: [
                     SimpleDialogOption(
                       padding: const EdgeInsets.all(20),
-                      child: const Text('Take a Photo'),
+                      child: const Text('카메라 촬영'),
                       onPressed: () async {
                         Navigator.of(context).pop();
                         Uint8List file = await pickImage(ImageSource.camera);
@@ -133,7 +135,7 @@ class _CertificationTileState extends State<CertificationTile> {
                     ),
                     SimpleDialogOption(
                       padding: const EdgeInsets.all(20),
-                      child: const Text('Choose From Gallery'),
+                      child: const Text('갤러리에서 선택'),
                       onPressed: () async {
                         Navigator.of(context).pop();
                         Uint8List file = await pickImage(ImageSource.gallery);
@@ -145,7 +147,7 @@ class _CertificationTileState extends State<CertificationTile> {
                     ),
                     SimpleDialogOption(
                       padding: const EdgeInsets.all(20),
-                      child: const Text('Cancel'),
+                      child: const Text('취소'),
                       onPressed: () async {
                         Navigator.of(context).pop();
                       },
@@ -162,6 +164,7 @@ class _CertificationTileState extends State<CertificationTile> {
           child: file0 == null
               ? Column(
                   children: [
+                    // color of the image icon changes to green if the challenge is achieved, if not, it stays red
                     IconButton(
                       onPressed: () => _imageSelect(context),
                       icon: const Icon(Icons.photo),
@@ -172,6 +175,7 @@ class _CertificationTileState extends State<CertificationTile> {
                     ),
                   ],
                 )
+              // shows a linear progress indicator while the submitted image is evaluated
               : SingleChildScrollView(
                   child: Center(
                     child: Column(

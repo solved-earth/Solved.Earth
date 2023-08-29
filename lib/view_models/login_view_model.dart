@@ -28,7 +28,9 @@ class LoginViewModel extends AsyncNotifier<void> {
       showFirebaseErrorSnack(context, state.error);
     } else {
       //context.go("/mainpage");
-      Navigator.of(context).popUntil((_) => count++ >= 3);
+      Navigator.of(context).popUntil(
+          (_) => count++ >= 3); // pops to settings page when login is completed
+      // display popup after login is completed and after 1500 ms, the popup disappears
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -39,7 +41,7 @@ class LoginViewModel extends AsyncNotifier<void> {
           return const CupertinoAlertDialog(
             title: Text(
               textAlign: TextAlign.center,
-              'You are signed in!',
+              '로그인 되었습니다!',
             ),
           );
         },
