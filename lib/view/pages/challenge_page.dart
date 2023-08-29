@@ -2,6 +2,7 @@ import 'package:app/components/certification_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:app/Constants/gaps.dart';
 
+// Screen for displaying details of a challenge.
 class ChallengePage extends StatelessWidget {
   final String challngeName; //Name of the challenge
   final String achievementCondition; // Condition of the challenge
@@ -22,7 +23,7 @@ class ChallengePage extends StatelessWidget {
     return Scaffold(
       //Show challenge name on title
       appBar: AppBar(
-        title: Text(challngeName),
+        title: Text(challngeName), // Show challenge name in the title.
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -40,20 +41,20 @@ class ChallengePage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    achievementCondition,
+                    achievementCondition, // Display achievement condition.
                     textAlign: TextAlign.center,
                   ),
                 ),
               ),
               Gaps.v24,
 
-              //Rendering a certification tile component
+              // Rendering a certification tile component
               CertificationTile(
                   index:
-                      index), //this tile post image and get cretification of the challenges
+                      index), // This tile posts image and gets certification of the challenges.
               Gaps.v24,
 
-              //show additional Explanation
+              // Show additional Explanation
               Container(
                 height: 220,
                 width: double.infinity,

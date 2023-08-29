@@ -7,7 +7,7 @@ class ChallengeModel extends ChangeNotifier {
       '종이 컵 대신 머그컵을',
       '종이컵이 아닌 머그컵을 사용하는 사진을 찍어주세요',
       '2021년 대한민국에서 141,547톤의 일회용 컵이 생산되었습니다. 이는 아시아 코끼리 35,380마리와 비슷한 무게입니다. 심지어 아시아 코끼리는 전 세계에 약 15,000마리 밖에 없습니다.',
-      false, // for evaluating whether the user passed the certification of the challenge
+      false, // For evaluating whether the user passed the certification of the challenge
       1,
     ],
     [
@@ -48,20 +48,20 @@ class ChallengeModel extends ChangeNotifier {
     ],
   ];
 
-  // achieved challenge list
+  // Achieved challenge list
   final List _achievements = [];
 
   List get challenges => _challenges;
   List get achievements => _achievements;
 
-  // logic for challenge certification success indication
+  // Logic for challenge certification success indication
   void clearChallenge(int index) {
     _challenges[index][3] = true;
     _achievements.add(_challenges[index]);
     notifyListeners();
   }
 
-  // return number of achieved challenge
+  // Return number of achieved challenge
   int numberofAchienements() {
     return _achievements.length;
   }

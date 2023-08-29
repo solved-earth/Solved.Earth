@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/constants/sizes.dart';
 import 'package:app/constants/gaps.dart';
-import 'package:app/pages/authentication/widgets/form_button.dart';
-import 'package:app/pages/authentication/widgets/email_screen.dart';
+import 'package:app/view/pages/authentication/widgets/form_button.dart';
+import 'package:app/view/pages/authentication/widgets/email_screen.dart';
 import 'package:app/view_models/signup_view_model.dart';
 
+// Screen for inputting a username during the signup process.
 class UserNameScreen extends ConsumerStatefulWidget {
   const UserNameScreen({super.key});
 
@@ -38,6 +39,7 @@ class _UserNameScreenState extends ConsumerState<UserNameScreen> {
     super.dispose();
   }
 
+  // Handle the action when the "다음" button is tapped
   void _onNextTap() {
     if (_username.isEmpty) return;
     ref.read(signUpForm.notifier).state = {"name": _username};

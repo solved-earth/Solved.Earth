@@ -1,8 +1,8 @@
-import 'package:app/pages/achievement_page.dart';
-import 'package:app/pages/challenge_list_page.dart';
-import 'package:app/pages/main_page.dart';
-import 'package:app/pages/tree_design_page.dart';
-import 'package:app/pages/settings_page.dart';
+import 'package:app/view/pages/achievement_page.dart';
+import 'package:app/view/pages/challenge_list_page.dart';
+import 'package:app/view/pages/main_page.dart';
+import 'package:app/view/pages/tree_design_page.dart';
+import 'package:app/view/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 

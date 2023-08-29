@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-// this function should be used to pick image from the past image source, which can be camera or gallery
+// This function is used to pick an image from the specified source (camera or gallery).
 pickImage(ImageSource source) async {
   final ImagePicker imagePicker = ImagePicker();
   XFile? file = await imagePicker.pickImage(source: source);
   if (file != null) {
-    return await file
-        .readAsBytes(); // process that returns the sellected image as bytes
+    return await file.readAsBytes(); // Return the selected image as bytes.
   }
   print("No Image Selected");
 }
 
-// showing snackbar that contains the text related to the context
+// Show a snackbar with the provided content and related to the context.
 showSnackBar(String content, BuildContext context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
@@ -22,7 +21,7 @@ showSnackBar(String content, BuildContext context) {
   );
 }
 
-// showing snackbar that contains the text related to the firebase error
+// Show a snackbar with the content related to the Firebase error.
 void showFirebaseErrorSnack(
   BuildContext context,
   Object? error,

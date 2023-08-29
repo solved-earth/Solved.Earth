@@ -1,13 +1,14 @@
 import 'package:app/models/challenge_model.dart';
 import 'package:flutter/material.dart';
-import 'package:app/pages/tree_design_page.dart';
+import 'package:app/view/pages/tree_design_page.dart';
 import 'package:app/models/tree_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-//definition of challenge model provider
+// Definition of the challenge model provider.
 final challengeModelProvider =
     ChangeNotifierProvider<ChallengeModel>((ref) => ChallengeModel());
 
+// Main page of the app.
 class MainPage extends StatefulWidget {
   static String routename = "/mainpage";
   const MainPage({
@@ -47,10 +48,10 @@ class _MainPageState extends State<MainPage> {
                   builder: (context, WidgetRef ref, _) {
                     final int numberofAchievements = ref
                         .read(challengeModelProvider)
-                        .numberofAchienements(); // 오류 수정
+                        .numberofAchienements(); // Get the number of achievements.
                     return Image(
                       image: AssetImage(treeModelList[selectedtreeindex].path),
-                      //make tree bigger according to the number of achievements
+                      // Make the tree bigger according to the number of achievements.
                       width: 200 + numberofAchievements * 100,
                       height: 200 + numberofAchievements * 100,
                     );

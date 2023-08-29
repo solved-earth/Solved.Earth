@@ -13,12 +13,12 @@ class PDFScreen extends StatefulWidget {
 }
 
 class _PDFScreenState extends State<PDFScreen> with WidgetsBindingObserver {
-  final Completer<PDFViewController> _controller =
-      Completer<PDFViewController>();
-  int? pages = 0;
-  int? currentPage = 0;
-  bool isReady = false;
-  String errorMessage = '';
+  final Completer<PDFViewController> _controller = Completer<
+      PDFViewController>(); // Controller to interact with the PDF view
+  int? pages = 0; // Total number of pages in the PDF document
+  int? currentPage = 0; // Current displayed page
+  bool isReady = false; // Indicates whether the PDF is ready to be displayed
+  String errorMessage = ''; // Holds error messages if any
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,7 @@ class _PDFScreenState extends State<PDFScreen> with WidgetsBindingObserver {
       body: Stack(
         children: <Widget>[
           PDFView(
+            // Display the PDF using Flutter PDFView
             filePath: widget.path,
             enableSwipe: true,
             swipeHorizontal: false,
@@ -39,7 +40,7 @@ class _PDFScreenState extends State<PDFScreen> with WidgetsBindingObserver {
             defaultPage: currentPage!,
             fitPolicy: FitPolicy.BOTH,
             preventLinkNavigation:
-                true, // if set to true the link is handled in flutter
+                true, // Prevent opening links within the PDF in an external browser
             onRender: (pages) {
               setState(() {
                 pages = pages;
@@ -76,9 +77,10 @@ class _PDFScreenState extends State<PDFScreen> with WidgetsBindingObserver {
                   ? const Center(
                       child: CircularProgressIndicator(),
                     )
-                  : Container()
+                  : Container() // Show loading indicator while PDF is rendering
               : Center(
-                  child: Text(errorMessage),
+                  child: Text(
+                      errorMessage), // Show error message if there's an issue
                 )
         ],
       ),
@@ -91,7 +93,7 @@ class _PDFScreenState extends State<PDFScreen> with WidgetsBindingObserver {
               onPressed: () async {
                 await snapshot.data!.setPage(pages! ~/ 2);
               },
-            );
+            ); // Button to navigate to the first page
           }
 
           return Container();

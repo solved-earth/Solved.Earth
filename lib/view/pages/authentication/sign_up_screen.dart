@@ -1,28 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:app/constants/gaps.dart';
 import 'package:app/constants/sizes.dart';
-import 'package:app/pages/authentication/widgets/auth_button.dart';
-import 'package:app/pages/authentication/widgets/login_form_screen.dart';
+import 'package:app/view/pages/authentication/login_screen.dart';
+import 'package:app/view/pages/authentication/widgets/username_screen.dart';
+import 'package:app/view/pages/authentication/widgets/auth_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-//import 'package:app/resources/auth_service.dart';
-
-import 'package:flutter/cupertino.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/resources/authentication_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginScreen extends ConsumerWidget {
-  LoginScreen({super.key});
+class SignUpScreen extends ConsumerWidget {
+  SignUpScreen({super.key});
 
-  void onSignUpTap(BuildContext context) {
-    Navigator.of(context).pop();
-  }
-
-  void _onEmailLoginTap(BuildContext context) {
+  void onLoginTap(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const LoginFormScreen(),
+        builder: (context) => LoginScreen(),
+      ),
+    );
+  }
+
+  void _onUserNameTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const UserNameScreen(),
+      ),
+    );
+  }
+
+  void _onEmailTap(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const UserNameScreen(),
       ),
     );
   }
@@ -33,8 +45,9 @@ class LoginScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("계정 로그인하기"),
+        title: const Text("계정 가입하기"),
       ),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -44,23 +57,20 @@ class LoginScreen extends ConsumerWidget {
             children: [
               Gaps.v24,
               const Text(
-                'Solved.Earth에 로그인하세요!',
+                'Solved.Earth에 가입하세요!',
                 style: TextStyle(
                   fontSize: Sizes.size24,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               Gaps.v20,
-              const SizedBox(
-                width: 300,
-                child: Text(
-                  '로그인해서 다양한 환경 챌린지들을 수행하고 나만의 나무를 키워보세요!',
-                  style: TextStyle(
-                    fontSize: Sizes.size16,
-                    color: Colors.black45,
-                  ),
-                  textAlign: TextAlign.center,
+              const Text(
+                '계정을 만들어 다양한 환경 챌린지들을 수행하고 나만의 나무를 키워보세요!',
+                style: TextStyle(
+                  fontSize: Sizes.size16,
+                  color: Colors.black45,
                 ),
+                textAlign: TextAlign.center,
               ),
               Gaps.v20,
               GestureDetector(
@@ -85,11 +95,11 @@ class LoginScreen extends ConsumerWidget {
                             },
                           ),
                         }
-                      : _onEmailLoginTap(context),
+                      : _onEmailTap(context),
                 },
                 child: const AuthButton(
                   icon: FaIcon(FontAwesomeIcons.user),
-                  text: "이메일과 비밀번호로 로그인하기",
+                  text: "이메일과 비밀번호로 가입하기",
                 ),
               ),
               Gaps.v16,
@@ -126,7 +136,7 @@ class LoginScreen extends ConsumerWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.google,
                   ),
-                  text: "구글로 로그인하기",
+                  text: "구글로 계속하기",
                 ),
               ),
               Gaps.v16,
@@ -154,7 +164,7 @@ class LoginScreen extends ConsumerWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.facebook,
                   ),
-                  text: "페이스북으로 로그인하기",
+                  text: "페이스북으로 계속하기",
                 ),
               ),
               Gaps.v16,
@@ -170,11 +180,7 @@ class LoginScreen extends ConsumerWidget {
                       content: const Text("Plx dont go"),
                       actions: [
                         IconButton(
-                          onPressed: () => {
-                            Navigator.of(context).pop(),
-                            //ref.read(authRepo).signOut(),
-                            //context.go("/"),
-                          },
+                          onPressed: () => Navigator.of(context).pop(),
                           icon: const FaIcon(FontAwesomeIcons.car),
                         ),
                         TextButton(
@@ -234,16 +240,16 @@ class LoginScreen extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "가입하신 계정이 없나요?",
+                '이미 계정이 있으신가요?',
                 style: TextStyle(
                   fontSize: Sizes.size16,
                 ),
               ),
               Gaps.h5,
               GestureDetector(
-                onTap: () => onSignUpTap(context),
+                onTap: () => onLoginTap(context),
                 child: Text(
-                  '가입하기',
+                  '로그인',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).primaryColor,

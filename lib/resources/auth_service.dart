@@ -30,29 +30,34 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
+  // Get the UID of the currently signed-in user or show 'No user signed in'.
   String currentUserUid =
       FirebaseAuth.instance.currentUser?.uid ?? 'No user signed in';
 
+  // Sign in using Google authentication.
   Future<void> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
+          await _googleSignIn.signIn(); // Start Google sign-in process.
       final GoogleSignInAuthentication googleSignInAuthentication =
-          await googleSignInAccount!.authentication;
+          await googleSignInAccount!
+              .authentication; // Get authentication details.
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleSignInAuthentication.accessToken,
         idToken: googleSignInAuthentication.idToken,
       );
-      await _auth.signInWithCredential(credential);
-      print('Current user UID: $currentUserUid');
+      await _auth
+          .signInWithCredential(credential); // Sign in with the credential.
+      print('Current user UID: $currentUserUid'); // Display current user's UID.
     } on FirebaseAuthException catch (e) {
-      print(e.message);
-      rethrow;
+      print(e.message); // Print the error message.
+      rethrow; // Re-throw the exception for handling at a higher level.
     }
   }
 
+  // Sign out from both Google and Firebase.
   Future<void> signOutFromGoogle() async {
-    await _googleSignIn.signOut();
-    await _auth.signOut();
+    await _googleSignIn.signOut(); // Sign out from Google.
+    await _auth.signOut(); // Sign out from Firebase.
   }
 }

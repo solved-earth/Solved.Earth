@@ -3,14 +3,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:app/Constants/gaps.dart';
-import 'package:app/pages/authentication/sign_up_screen.dart';
-//import 'package:app/pages/open_source_licenses.dart';
-import 'package:app/resources/oss_view.dart';
+import 'package:app/view/pages/authentication/sign_up_screen.dart';
+import 'package:app/view/oss_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:app/resources/pdf_viewer.dart';
-import 'package:app/resources/tile.dart';
+import 'package:app/resources/icon_tile.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:app/view_models/user_view_model.dart';
@@ -61,8 +60,6 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
 
     return completer.future;
   }
-
-  //final User? currentUser = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +112,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       },
                     ),
                   ),
-                  child: const Tile(
+                  child: const IconTile(
                     icon: Icons.person_outline,
                     color: Colors.purple,
                     text: "계정 연결",
@@ -135,7 +132,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       },
                     ),
                   ),
-                  child: const Tile(
+                  child: const IconTile(
                     icon: Icons.campaign_outlined,
                     color: Colors.green,
                     text: "공지사항",
@@ -149,13 +146,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     );
                     if (await canLaunchUrl(url)) {
                       launchUrl(url, mode: LaunchMode.externalApplication);
-                      // 크롬 브라우저에서 제대로 실행이 안 될 경우, launchUrl(url); 로 수정
                     } else {
                       // ignore: avoid_print
                       print("Can't launch $url");
                     }
                   },
-                  child: const Tile(
+                  child: const IconTile(
                     icon: Icons.bug_report_outlined,
                     color: Colors.redAccent,
                     text: "버그 신고",
@@ -173,7 +169,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       );
                     }
                   },
-                  child: const Tile(
+                  child: const IconTile(
                     icon: Icons.article_outlined,
                     color: Colors.brown,
                     text: "서비스 이용약관",
@@ -192,7 +188,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       );
                     }
                   },
-                  child: const Tile(
+                  child: const IconTile(
                     icon: Icons.apps_outage,
                     color: Colors.teal,
                     text: "개인정보 처리방침",
@@ -208,7 +204,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       },
                     ),
                   ),
-                  child: const Tile(
+                  child: const IconTile(
                     icon: Icons.policy_outlined,
                     color: Colors.blue,
                     text: "오픈소스 라이선스",

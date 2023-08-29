@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:app/constants/sizes.dart';
 import 'package:app/constants/gaps.dart';
-import 'package:app/pages/authentication/widgets/form_button.dart';
-import 'package:app/pages/authentication/widgets/password_screen.dart';
+import 'package:app/view/pages/authentication/widgets/form_button.dart';
+import 'package:app/view/pages/authentication/widgets/password_screen.dart';
 import 'package:app/view_models/signup_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -17,6 +17,7 @@ class EmailScreen extends ConsumerStatefulWidget {
   ConsumerState<EmailScreen> createState() => _EmailScreenState();
 }
 
+// Define the state for the EmailScreen widget
 class _EmailScreenState extends ConsumerState<EmailScreen> {
   final TextEditingController _emailController = TextEditingController();
 
@@ -25,6 +26,7 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
   @override
   void initState() {
     super.initState();
+    // Listen to changes in the email text field
     _emailController.addListener(
       () {
         setState(() {
@@ -40,6 +42,7 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
     super.dispose();
   }
 
+  // Validate if the email is in a valid format
   String? _isEmailValid() {
     if (_email.isEmpty) return null;
     final regExp = RegExp(
@@ -50,10 +53,12 @@ class _EmailScreenState extends ConsumerState<EmailScreen> {
     return null;
   }
 
+  // Handle the action when the user taps on the scaffold
   void _onScaffoldTap() {
     FocusScope.of(context).unfocus();
   }
 
+  // Handle the action when the "다음" button is tapped
   void _onSubmit() {
     if (_email.isEmpty || _isEmailValid() != null) return;
     final state = ref.read(signUpForm.notifier).state;

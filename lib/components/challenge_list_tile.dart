@@ -1,12 +1,16 @@
-import 'package:app/pages/challenge_page.dart';
+import 'package:app/view/pages/challenge_page.dart';
 import 'package:flutter/material.dart';
 
 class ChallengeListTile extends StatelessWidget {
-  final String challgeName;
-  final String achievementCondition;
-  final String additionalExplanation;
-  final int index;
+  // Properties to store information about the challenge
+  final String challgeName; // The name of the challenge
+  final String
+      achievementCondition; // The condition required to achieve the challenge
+  final String
+      additionalExplanation; // Additional explanation or details about the challenge
+  final int index; // The index of the challenge
 
+  // Constructor for the ChallengeListTile
   const ChallengeListTile({
     super.key,
     required this.challgeName,
@@ -20,6 +24,7 @@ class ChallengeListTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: GestureDetector(
+        // Navigate to ChallengePage when the tile is tapped
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
@@ -40,6 +45,7 @@ class ChallengeListTile extends StatelessWidget {
           ),
           child: Column(
             children: [
+              // Display the challenge name in the tile
               Text(
                 challgeName,
                 style: const TextStyle(color: Colors.black),

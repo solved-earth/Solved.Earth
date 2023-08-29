@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'main_page.dart';
 
+// Screen for displaying achievements.
 class AchievementPage extends StatelessWidget {
   const AchievementPage({super.key});
 
@@ -15,8 +16,8 @@ class AchievementPage extends StatelessWidget {
           Expanded(
             child: Consumer(
               builder: (context, watch, child) {
-                final challengeModel = watch
-                    .read(challengeModelProvider); //provider of challenge model
+                final challengeModel = watch.read(
+                    challengeModelProvider); // Provider of challenge model.
                 return GridView.builder(
                   itemCount: challengeModel.achievements.length,
                   padding: const EdgeInsets.all(12),
@@ -25,7 +26,7 @@ class AchievementPage extends StatelessWidget {
                     childAspectRatio: 1 / 1.2,
                   ),
                   itemBuilder: (context, index) {
-                    //display individual achievement tiles
+                    // Display individual achievement tiles.
                     return AchievementTile(
                       challgeName: challengeModel.achievements[index]
                           [0], // Challenge name

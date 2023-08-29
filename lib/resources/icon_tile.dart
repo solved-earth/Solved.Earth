@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Tile extends StatelessWidget {
+// IconTile that is being displayed on the left side of every options in settings page
+class IconTile extends StatelessWidget {
   final IconData icon;
   final Color color;
   final String text;
 
-  const Tile({
+  const IconTile({
     required this.icon,
     required this.color,
     super.key,

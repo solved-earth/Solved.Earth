@@ -18,26 +18,24 @@ class ImageStoreMethods {
   String currentUserUid = FirebaseAuth.instance.currentUser!.uid;
 
   Future<String> imageToStorage(Uint8List file, int index) async {
-    String id = const Uuid().v1();
+    String id = const Uuid().v1(); // Generate a unique ID for the file
 
-    // !! need to receive $userId and $challengeId
+    // Reference is an object that represents a reference to a file or a directory in a cloud storage service such as firebase storage
     Reference ref = _storage
         .ref()
         .child('users/$currentUserUid/${index.toString()}/')
         .child(id); // To specify the folder names for the post and post id
-    // !! _storage.ref().child("users/" + $userId + $challengeId + id);
 
-    // Reference is an object that represents a reference to a file or a directory in a cloud storage service such as firebase storage
-
-    UploadTask uploadTask = ref.putData(
-        file); // UploadTask is an object that represents a task for uploading a file to a cloud storage service such as firebase storage
+    // UploadTask is an object that represents a task for uploading a file to a cloud storage service such as firebase storage
+    UploadTask uploadTask = ref.putData(file);
     TaskSnapshot snapshot = await uploadTask; // Can monitor the upload progress
-    String downloadUrl = await snapshot.ref.getDownloadURL();
+    String downloadUrl = await snapshot.ref
+        .getDownloadURL(); // Get the URL of the uploaded image
     return downloadUrl;
   }
 
-  //! Replaced the Future type from Future<String> to Future<Object>
-  String baseUrl = dotenv.env['BASE_URL'].toString();
+  String baseUrl =
+      dotenv.env['BASE_URL'].toString(); // Base URL for API requests
 
   Future<String> uploadPost(
       String description, Uint8List file, int index) async {
@@ -46,9 +44,9 @@ class ImageStoreMethods {
 
     String apiUrl =
         '$baseUrl/upload-images?username=$currentUserUid&challenge_name=recycle';
-    Uri uri = Uri.parse(apiUrl);
+    Uri uri = Uri.parse(apiUrl); // Create a URI for the API endpoint
 
-    // Handle the API response
+    // Function to handle the API response
     Future<String> handleApiResponse(Response<dynamic> response) async {
       if (response.statusCode == 200) {
         Map<String, dynamic> responseBodyMap = response.data;
@@ -57,8 +55,8 @@ class ImageStoreMethods {
             String photoUrl = await imageToStorage(file, index);
             String postId = const Uuid().v1();
 
+            // Create a Post object and store it in Firestore
             Post post = Post(
-              //description: description,
               postId: postId,
               datePublished: DateTime.now(),
               postUrl: photoUrl,
@@ -83,7 +81,7 @@ class ImageStoreMethods {
       }
     }
 
-    //send api request in dio
+    // Send API request using Dio
     var dio = Dio();
     dio.options.connectTimeout = const Duration(
         seconds:

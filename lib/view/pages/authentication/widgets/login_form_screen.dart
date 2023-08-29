@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:app/constants/gaps.dart';
 import 'package:app/constants/sizes.dart';
-import 'package:app/pages/authentication/widgets/form_button.dart';
+import 'package:app/view/pages/authentication/widgets/form_button.dart';
 import 'package:app/view_models/login_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Screen for the login form.
 class LoginFormScreen extends ConsumerStatefulWidget {
   const LoginFormScreen({super.key});
 
@@ -21,12 +22,13 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
     if (_formKey.currentState != null) {
       if (_formKey.currentState!.validate()) {
         _formKey.currentState!.save();
+        // Call the login function from the view model.
         ref
             .read(loginProvider.notifier)
             .login(formData["email"]!, formData["password"]!, context);
       }
     }
-  } // 설명 필요
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +102,7 @@ class _LoginFormScreenState extends ConsumerState<LoginFormScreen> {
                 GestureDetector(
                   onTap: _onSubmitTap,
                   child: FormButton(
+                    // Disable the button while the view model is loading.
                     disabled: ref.watch(loginProvider).isLoading,
                     text: "로그인",
                   ),

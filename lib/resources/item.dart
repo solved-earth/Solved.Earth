@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
-//import 'package:wakmusic/style/colors.dart';
-//import 'package:wakmusic/style/text_styles.dart';
 
 class Item extends StatelessWidget {
   const Item({super.key, this.onTap, required this.text});

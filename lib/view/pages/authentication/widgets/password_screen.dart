@@ -3,12 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:app/constants/sizes.dart';
 import 'package:app/constants/gaps.dart';
-import 'package:app/pages/authentication/widgets/form_button.dart';
-import 'package:app/pages/authentication/widgets/birthday_screen.dart';
+import 'package:app/view/pages/authentication/widgets/form_button.dart';
+import 'package:app/view/pages/authentication/widgets/birthday_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:app/view_models/signup_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Screen for entering a password during the signup process.
 class PasswordScreen extends ConsumerStatefulWidget {
   const PasswordScreen({super.key});
 
@@ -26,6 +27,8 @@ class _PasswordScreenState extends ConsumerState<PasswordScreen> {
   @override
   void initState() {
     super.initState();
+
+    // Listener to update the password text when the controller value changes.
     _passwordController.addListener(
       () {
         setState(
@@ -43,14 +46,17 @@ class _PasswordScreenState extends ConsumerState<PasswordScreen> {
     super.dispose();
   }
 
+  // Check if the entered password is valid.
   bool _isPasswordValid() {
     return _password.isNotEmpty && _password.length > 8;
   }
 
+  // Close the keyboard when the scaffold is tapped.
   void _onScaffoldTap() {
     FocusScope.of(context).unfocus();
   }
 
+  // Handle the action when the "다음" button is tapped
   void _onSubmit() {
     if (!_isPasswordValid()) return;
     final state = ref.read(signUpForm.notifier).state;
@@ -66,10 +72,12 @@ class _PasswordScreenState extends ConsumerState<PasswordScreen> {
     );
   }
 
+  // Handle the action when the solidCircleXmark icon is tapped
   void _onClearTap() {
     _passwordController.clear();
   }
 
+  // Toggle the visibility of the password text
   void _toggleObscureText() {
     _obscureText = !_obscureText;
     setState(() {});

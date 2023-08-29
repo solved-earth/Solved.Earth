@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:app/pages/main_page.dart';
+import 'package:app/view/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/models/challenge_model.dart';
@@ -27,7 +27,7 @@ class _CertificationTileState extends State<CertificationTile> {
 
   @override
   void dispose() {
-    // call the dispose method of the super class
+    // Call the dispose method of the super class
     super.dispose();
   }
 
@@ -35,20 +35,21 @@ class _CertificationTileState extends State<CertificationTile> {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, watch, _) {
+        // Access the ChallengeModel using the watch function from Flutter Riverpod
         ChallengeModel challengeModel = watch.read(challengeModelProvider);
 
         Uint8List? file0;
         final TextEditingController descriptionController =
             TextEditingController();
 
-        // clears the selected image(file variable) by null
+        // Clear the selected image (file variable) by setting it to null
         void clearImage() {
           setState(() {
             file0 = null;
           });
         }
 
-        // change the status of a specific challenge whether it's acheived or not
+        // Change the status of a specific challenge whether it's achieved or not
         void handleTap() {
           bool isAchieved = challengeModel.challenges[widget.index][3];
           if (!isAchieved) {
@@ -57,7 +58,8 @@ class _CertificationTileState extends State<CertificationTile> {
         }
 
         bool isLoading = false;
-        // starts the procedure to evaluate the sellected image with calling uploadPost function
+
+        // Start the procedure to evaluate the selected image by calling uploadPost function
         void postImage() async {
           setState(() {
             isLoading = true;
@@ -89,10 +91,11 @@ class _CertificationTileState extends State<CertificationTile> {
           }
         }
 
+        // Function to select an image using the image picker
         _imageSelect(BuildContext context) async {
           bool isAchieved = challengeModel.challenges[widget.index][3];
 
-          // shows a popup to direct the user to login for certifing challenges
+          // Show a popup to direct the user to login for certifying challenges
           if (currentUser == null) {
             showCupertinoDialog(
               context: context,
@@ -114,7 +117,7 @@ class _CertificationTileState extends State<CertificationTile> {
           } else if (isAchieved) {
             return showSnackBar('이미 성공한 도전과제 입니다.', context);
           } else {
-            // shows options whether to certify the selected challenge or not
+            // Show options for certifying the selected challenge
             return showDialog(
               context: context,
               builder: (context) {
@@ -164,7 +167,7 @@ class _CertificationTileState extends State<CertificationTile> {
           child: file0 == null
               ? Column(
                   children: [
-                    // color of the image icon changes to green if the challenge is achieved, if not, it stays red
+                    // The color of the image icon changes to green if the challenge is achieved, if not, it stays red
                     IconButton(
                       onPressed: () => _imageSelect(context),
                       icon: const Icon(Icons.photo),
@@ -175,7 +178,7 @@ class _CertificationTileState extends State<CertificationTile> {
                     ),
                   ],
                 )
-              // shows a linear progress indicator while the submitted image is evaluated
+              // Show a linear progress indicator while the submitted image is evaluated
               : SingleChildScrollView(
                   child: Center(
                     child: Column(

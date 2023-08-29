@@ -6,12 +6,13 @@ import 'package:app/resources/router.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(
+      fileName: ".env"); // Load environment variables from .env file.
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(); // Initialize Firebase services.
 
   runApp(
-    // wrap the app with the ProviderScope from Riverpod.
+    // Wrap the app with the ProviderScope from Riverpod.
     const ProviderScope(child: MyApp()),
   );
 }
@@ -26,11 +27,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // create MaterialApp with custom router configuration.
+    // Create MaterialApp with custom router configuration.
     return MaterialApp.router(
-      routerConfig: router,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.lightGreen),
+      routerConfig: router, // Use the defined router configuration.
+      debugShowCheckedModeBanner: false, // Hide the debug banner.
+      theme:
+          ThemeData(primarySwatch: Colors.lightGreen), // Set the app's theme.
     );
   }
 }

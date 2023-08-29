@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/models/scope.dart';
-//import 'package:wakmusic/style/text_styles.dart';
 import 'package:app/resources/dismissible_view.dart';
-import 'package:app/resources/header.dart';
 import 'package:app/resources/exitable.dart';
 
 class OSSDetailView extends StatelessWidget {
@@ -32,14 +30,11 @@ class OSSDetailView extends StatelessWidget {
           child: SafeArea(
             child: Column(
               children: [
-                Header(
-                  type: HeaderType.back,
-                  headerTxt: name,
-                ),
                 Expanded(
                   child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
                     padding: const EdgeInsets.all(20),
+                    // Display the license text with a bold font style
                     child: Text(
                       license,
                       style: const TextStyle(fontWeight: FontWeight.bold),

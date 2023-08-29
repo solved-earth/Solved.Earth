@@ -7,41 +7,45 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:app/utils/utils.dart';
 
+// ViewModel responsible for managing the sign-up process.
 class SignUpViewModel extends AsyncNotifier<void> {
   late final AuthenticationRepository _authRepo;
   int count = 0;
 
   @override
   FutureOr<void> build() {
-    _authRepo = ref.read(authRepo);
+    _authRepo = ref.read(
+        authRepo); // Access the authentication repository from the context.
   }
 
+  // Initiates the sign-up process.
   Future<void> signUp(BuildContext context) async {
-    state = const AsyncValue.loading();
-    final form = ref.read(signUpForm);
-    final users = ref.read(usersProvider.notifier);
+    state = const AsyncValue.loading(); // Set loading state.
+    final form = ref.read(signUpForm); // Access the sign-up form state.
+    final users = ref.read(usersProvider.notifier); // Access the user provider.
 
     state = await AsyncValue.guard(
       () async {
         final userCredential = await _authRepo.signUp(
-          form["email"],
-          form["password"],
+          form["email"], // Get email from the form.
+          form["password"], // Get password from the form.
         );
         await users.createProfile(
           credential: userCredential,
           email: form['email'],
           name: form['name'],
           birthday: form['birthday'],
-        );
+        ); // Create a user profile with the obtained credentials and form data.
       },
     );
     if (state.hasError) {
-      showFirebaseErrorSnack(context, state.error);
+      showFirebaseErrorSnack(
+          context, state.error); // Show error snack bar if sign-up fails.
     } else {
       //context.go("/mainpage");
       Navigator.of(context).popUntil((_) =>
-          count++ >= 5); // pops to settings page when signup is completed
-      // display popup after signup is completed and after 1500 ms, the popup disappears
+          count++ >= 5); // Pops to settings page when signup is completed
+      // Display popup after signup is completed and after 1500 ms, the popup disappears
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -61,8 +65,10 @@ class SignUpViewModel extends AsyncNotifier<void> {
   }
 }
 
+// Provider instance that manages the state of the sign-up form.
 final signUpForm = StateProvider((ref) => {});
 
+// Provider instance that exposes the SignUpViewModel to the app.
 final signUpProvider = AsyncNotifierProvider<SignUpViewModel, void>(
   () => SignUpViewModel(),
 );
