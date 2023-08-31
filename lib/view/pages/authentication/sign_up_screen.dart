@@ -111,6 +111,7 @@ class SignUpScreen extends ConsumerWidget {
                 text: "Continue with Apple",
               ),
               Gaps.v16,*/
+              // ! Google authentication method seems like it's only available only if you previously sent your SHA-1, SHA-256 Key that was made by local android file to Firebase project settings when you test with android emulator
               GestureDetector(
                 onTap: () => {
                   showCupertinoDialog(
