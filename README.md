@@ -27,7 +27,7 @@ This is still ongoing project. Please contact us(ecotreegrowing@gmail.com) to di
 <br/>
 <br/>
 
-## 📷 Demo Video (시연 영상)
+## 📷 Demonstration Video (시연 영상)
 
 You can watch the video by clicking the image below.
 하단 이미지를 클릭하시면 영상을 시청하실 수 있습니다. (Youtube)
