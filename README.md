@@ -87,7 +87,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct2.jpg alt="struct2" width="600"/></p>
+   <p align="center"><img src=./report/struct2.jpg alt="struct2" width="800"/></p>
 
 <br/>
    
@@ -121,7 +121,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct3.jpg alt="struct3" width = "500"/></p>
+   <p align="center"><img src=./report/struct3.jpg alt="struct3" width = "800"/></p>
 
 <br/>
 
