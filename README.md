@@ -199,30 +199,40 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 - 메인 화면 & 사이드바 화면 & 나무 변경하기 화면
  <img src=./report/appview/mainpage.png alt="mainpage" height = "500" />
+ &nbsp;&nbsp;&nbsp;
  <img src=./report/appview/sidebar.png alt="sidebar" height = "500" />
+ &nbsp;&nbsp;&nbsp;
  <img src=./report/appview/tree_slide_show.gif alt="tree_slide_show" height = "500" />
  
 <br/><br/>
 
  - 챌린지 화면
  <img src=./report/appview/challenge_list.png alt="challenge_list" height = "500" />
+ &nbsp;&nbsp;&nbsp;
  <img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "500" />
  
 <br/><br/>
 
- - 설정 화면 & 오픈소스 라이선스 화면 & 서비스 이용약관 화면 & 개인정보처리 화면
+ - 설정 화면 & 서비스 이용약관 화면 & 개인정보처리 화면 & 오픈소스 라이선스 화면
  <img src=./report/appview/settings_page.png alt="settings_page" height = "500" />
- <img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "500" />
- <img src=./report/appview/challenge_list.png alt="challenge_list" height = "500" />
- <img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/tos.png alt="tos" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/personal_info.png alt="personal_info" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/oss_license.png alt="oss_license" height = "500" />
 
 <br/><br/>
 
  - 가입하기 화면
  <img src=./report/appview/signin.png alt="signin" height = "500" />
+ &nbsp;&nbsp;&nbsp;
  <img src=./report/appview/signin_1.png alt="signin_1" height = "500" />
+ &nbsp;&nbsp;&nbsp;
  <img src=./report/appview/signin_2.png alt="signin_2" height = "500" />
+ &nbsp;&nbsp;&nbsp;
  <img src=./report/appview/signin_3.png alt="signin_3" height = "500" />
+ &nbsp;&nbsp;&nbsp;
  <img src=./report/appview/signin_4.png alt="signin_4" height = "500" />
 
  
