@@ -101,7 +101,10 @@ class _CertificationTileState extends State<CertificationTile> {
               context: context,
               builder: (context) {
                 return CupertinoAlertDialog(
-                  title: const Text("챌린지 인증을 하기 위해선 로그인을 먼저 해야 합니다."),
+                  title: const Text(
+                    "챌린지 인증을 위해서는 로그인을 먼저 해야 합니다.",
+                    textAlign: TextAlign.center,
+                  ),
                   content: const Text("로그인하고 나서 다시 시도해주세요."),
                   actions: [
                     CupertinoDialogAction(
