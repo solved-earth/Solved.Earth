@@ -41,28 +41,13 @@ You can watch the video by clicking the image below.
 
 ## 📌 Introducing Solved.Earth (프로젝트 소개)
 
-### 1. Background (개발 배경)
+### 1. Background & Purpose of this project (개발배경 및 목적)
 
-&nbsp;&nbsp; 1111
-1111
+&nbsp;&nbsp; 환경 보호는 생활 속에서 다양한 방식으로 실천 가능하나 가장 중요한 것은 한 사람 한 사람의 실천이 모여야만 제대로 된 성과가 나타난다는 점입니다. 생활 속 환경 보호를 많은 사람이 실천하도록 유도하는 것을 주된 목적으로 두고 저희 팀은 어떤 방법이 가장 유용할 지에 대해 토론했습니다.
 
-&nbsp;&nbsp; 2222
-2222
+&nbsp;&nbsp; 이 때 영감을 받은 것이 solved.ac입니다. solved.ac는 알고리즘 트레이닝 사이트에 수록된 문제들의 난이도를 측정하는 커뮤니티 프로젝트이며 해결한 문제들을 바탕으로 사용자의 티어를 계산하는 시스템입니다. 이러한 퀘스트-보상 방식을 환경 보호 활동에 적용한다면 환경 보호에 대한 강력한 동기를 제공할 수 있겠다고 생각했습니다.
   
-&nbsp;&nbsp; 3333
-3333
-
-<br/>
-
-### 2. Purpose of this project (개발 목적)
-
-1. aaaaaaaaaa <b>AAAAAAAAAAAA</b> aaaaaaaaaaaaaaa
-
-2. bbbbbbbbbb<b>BBBBBBBBBBBB</b>bbbbbbbbbbbb
-
-3. cccccccccc<b>CCCCCCCCCCCCC</b>cccccccccccccc<br/>
-cccccccccccccccccccccccccccccc
-
+&nbsp;&nbsp; 이 아이디어를 토대로 고안한 본 프로젝트는 대중교통을 이용하거나 헌 옷 기부하기 등 주어진 다양한 환경 관련 챌린지를 수행하면서 국민 생활에 환경 챌린지를 언제 어디서나 수행할 수 있도록 하는 것을 궁극적인 목표로 합니다.
 
 <br/>
 <br/>
@@ -159,21 +144,20 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 
-## 🔧 적용 기술
+## 🔧 Applied Technology (적용 기술)
 
-### - 핵심 기술
+### - Core Technology (핵심 기술)
 
-- 기술 1
-- 기술 2
-- 기술 3
-- 기술 4
+- Flutter 기반으로 개발한 다양한 환경 챌린지를 수행할 수 있는 모바일 앱
+- FastAPI를 기반으로 OpenCV의 YOLOv5 모델을 사용하여 유저가 업로드 한 이미지를 객체탐지 한 뒤 인증 조건에 부합한 경우, 인증 결과가 Firebase에 저장되는 인증 프로토콜
+- 유저 인증 및 등록을 수행할 수 있는 Firebase Authentication과 유저 데이터를 보관 및 관리할 수 있는 Cloud Firestore
 
-### - 개발 환경 
+### - Dev. Environment (개발 환경) 
 
 ![Windows 10](https://img.shields.io/badge/Windows%2010-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-### - 프레임워크
+### - Framework (프레임워크)
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
@@ -181,11 +165,11 @@ bbbbbbbbbbbbbbbbbbbbbbb
 ![YOLOv5](https://img.shields.io/badge/YOLOv5-00FFFF?style=for-the-badge&logo=YOLOv5&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white)
 
-### - 개발 언어
+### - Programming Language (개발 언어)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-### - 개발 도구
+### - Dev. Tool (개발 도구)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
@@ -195,7 +179,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 
-## 🖼 프로젝트 결과
+## 🖼 Project Result (프로젝트 결과)
 
 ### 1. Project Image (프로젝트 사진)
 
@@ -219,7 +203,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 
-### 2. 기대 효과
+### 2. Expected effects & application areas (기대효과 및 활용분야)
 
 - <b>설명1 </b>
 
@@ -239,7 +223,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 
-### 3. 활용 분야
+### 3. 기타
 
 - <b>설명1 </b>
 
