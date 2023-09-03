@@ -171,6 +171,12 @@ bbbbbbbbbbbbbbbbbbbbbbb
 ![Windows 10](https://img.shields.io/badge/Windows%2010-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
+### - Dev. Tool (개발 도구)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=colab&logoColor=white)
+
 ### - Framework (프레임워크)
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
@@ -183,11 +189,6 @@ bbbbbbbbbbbbbbbbbbbbbbb
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-### - Dev. Tool (개발 도구)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
 <br/>
 <br/>
 
@@ -195,6 +196,13 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 ### 1. Project Image (프로젝트 사진)
 
+<b> 
+The images below show only part of the project.
+<br/>
+아래 사진들은 프로젝트의 일부만 보여줍니다.
+<b> 
+<br/>
+<br/>
 <b> 
 
 - 메인 화면 & 사이드바 화면 & 나무 변경하기 화면
