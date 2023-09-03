@@ -197,18 +197,23 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 <b> 
 
-- 화면 1 
- <img src=./파일경로 alt="확장자 제외한 파일 이름" width = "1000" />
+- 메인 화면 & 사이드바 화면 & 나무 변경하기 화면
+ <img src=./report/appview/mainpage.png alt="mainpage" height = "1000" /><img src=./report/appview/sidebar.png alt="sidebar" height = "1000" /><img src=./report/appview/tree_slide_show.gif alt="tree_slide_show" height = "1000" />
  
 <br/><br/>
 
- - 화면 2
- <img src=./파일경로 alt="확장자 제외한 파일 이름" width = "1000" />
+ - 챌린지 화면
+ <img src=./report/appview/challenge_list.png alt="challenge_list" height = "1000" /><img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "1000" />
  
 <br/><br/>
 
- - 화면 3
- <img src=./파일경로 alt="확장자 제외한 파일 이름" width = "1000" />
+ - 설정 화면 & 오픈소스 라이선스 화면 & 서비스 이용약관 화면 & 개인정보처리 화면
+ <img src=./report/appview/settings_page.png alt="settings_page" height = "1000" /><img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "1000" /><img src=./report/appview/challenge_list.png alt="challenge_list" height = "1000" /><img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "1000" />
+
+<br/><br/>
+
+ - 가입하기 화면
+ <img src=./report/appview/signin.png alt="signin" height = "1000" /><img src=./report/appview/signin_1.png alt="signin_1" height = "1000" /><img src=./report/appview/signin_2.png alt="signin_2" height = "1000" /><img src=./report/appview/signin_3.png alt="signin_3" height = "1000" /><img src=./report/appview/signin_4.png alt="signin_4" height = "1000" />
 
  
 </b>
