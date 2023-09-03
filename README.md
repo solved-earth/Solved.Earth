@@ -16,7 +16,6 @@
 
 <br/>
 <br/>
-<br/>
 
 ## ✔ NOTICE
 
@@ -24,7 +23,6 @@ This is still ongoing project. Please contact us(ecotreegrowing@gmail.com) to di
 
 이 프로젝트는 아직 완전히 배포되지 않은 상태입니다. 이 프로젝트에 참여하시고자 한다면 저희 팀 이메일을 통해 연락주시길 바랍니다.(ecotreegrowing@gmail.com)
 
-<br/>
 <br/>
 <br/>
 
@@ -35,7 +33,6 @@ You can watch the video by clicking the image below.
 
 [<img src="썸네일 이미지 URL" alt="Solved.Earth"/>](영상 URL)
 
-<br/>
 <br/>
 <br/>
 <br/>
@@ -59,7 +56,6 @@ You can watch the video by clicking the image below.
   
 &nbsp;&nbsp; 이 아이디어를 토대로 고안한 본 프로젝트는 대중교통을 이용하거나 헌 옷 기부하기 등 주어진 다양한 환경 관련 챌린지를 수행하면서 국민 생활에 환경 챌린지를 언제 어디서나 수행할 수 있도록 하는 것을 궁극적인 목표로 합니다.
 
-<br/>
 <br/>
 <br/>
 <br/>
@@ -152,7 +148,6 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 <br/>
-<br/>
 
 ## 🔧 Applied Technology (적용 기술)
 
@@ -194,7 +189,6 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 <br/>
-<br/>
 
 ## 🖼 Project Result (프로젝트 결과)
 
@@ -227,7 +221,6 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 - <b>Through this, we expect to secure access to environmental practices that allow people to carry out environmental challenges at any time in their lives. </b>
 
-<br/>
 <br/>
 
 - <b>본 오픈소스 프로젝트는 궁극적으로 대학교 연합 환경 챌린지 캠페인을 진행하는 데에 사용하는 등 다양한 환경 관련 이벤트 및 캠페인에 활용이 될 수 있도록 지속적으로 개발하고자 합니다. </b>
