@@ -168,7 +168,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 ### - Dev. Environment (개발 환경) 
 
-![Windows 10](https://img.shields.io/badge/Windows%2010-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
+![Windows 11](https://img.shields.io/badge/Windows%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 ### - Dev. Tool (개발 도구)
