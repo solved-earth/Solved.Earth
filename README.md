@@ -35,7 +35,6 @@ You can watch the video by clicking the image below.
 
 <br/>
 <br/>
-<br/>
 
 ## 📌 Introducing Solved.Earth (프로젝트 소개)
 
@@ -56,7 +55,6 @@ You can watch the video by clicking the image below.
   
 &nbsp;&nbsp; 이 아이디어를 토대로 고안한 본 프로젝트는 대중교통을 이용하거나 헌 옷 기부하기 등 주어진 다양한 환경 관련 챌린지를 수행하면서 국민 생활에 환경 챌린지를 언제 어디서나 수행할 수 있도록 하는 것을 궁극적인 목표로 합니다.
 
-<br/>
 <br/>
 <br/>
 
@@ -147,7 +145,6 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 <br/>
 <br/>
-<br/>
 
 ## 🔧 Applied Technology (적용 기술)
 
@@ -163,6 +160,9 @@ bbbbbbbbbbbbbbbbbbbbbbb
 - Flutter 기반으로 개발한 다양한 환경 챌린지에 참여할 수 있는 모바일 앱
 - FastAPI를 기반으로 OpenCV의 YOLOv5 모델을 사용하여 유저가 업로드 한 이미지를 객체탐지 한 뒤 인증 조건에 부합한 경우, 인증 결과가 Firebase에 저장되는 인증 프로토콜
 - 유저 인증 및 등록을 수행할 수 있는 Firebase Authentication과 유저 데이터를 보관 및 관리할 수 있는 Cloud Firestore
+
+<br/>
+<br/>
 
 ### - Dev. Environment (개발 환경) 
 
@@ -186,7 +186,6 @@ bbbbbbbbbbbbbbbbbbbbbbb
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-<br/>
 <br/>
 <br/>
 
