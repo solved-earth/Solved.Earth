@@ -11,7 +11,7 @@
 
 ## 🔑 GUIDES
 
-<h4>License : <a href="LICENSE">MIT</a> / <a href="oss_licenses.dart">Third Party</a> </h4>
+<h4>License : <a href="LICENSE">MIT</a> / <a href="./lib/oss_licenses.dart">Third Party</a> </h4>
 <h4>Contribute : <a href="CONTRIBUTE.md">How to Contribute</a>
 
 <br/>
