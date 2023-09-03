@@ -50,7 +50,8 @@ You can watch the video by clicking the image below.
 
 &nbsp;&nbsp; Designed based on this idea, the project ultimately aims to enable people to carry out environmental challenges in their lives, anytime, anywhere, while carrying out various environmental challenges given, such as using public transportation or donating used clothes.
 
-
+<br/>
+<br/>
 
 &nbsp;&nbsp; 환경 보호는 생활 속에서 다양한 방식으로 실천 가능하나 가장 중요한 것은 한 사람 한 사람의 실천이 모여야만 제대로 된 성과가 나타난다는 점입니다. 생활 속 환경 보호를 많은 사람이 실천하도록 유도하는 것을 주된 목적으로 두고 저희 팀은 어떤 방법이 가장 유용할 지에 대해 토론했습니다.
 
@@ -161,7 +162,8 @@ bbbbbbbbbbbbbbbbbbbbbbb
 - An authentication protocol that uses OpenCV's YOLOv5 model based on FastAPI to object-detect user-uploaded images and store authentication results in Firebase if they meet the authentication criteria
 - Firebase Authentication for user authentication and registration, and Cloud Firestore for archiving and managing user data
 
-
+<br/>
+<br/>
 
 - Flutter 기반으로 개발한 다양한 환경 챌린지에 참여할 수 있는 모바일 앱
 - FastAPI를 기반으로 OpenCV의 YOLOv5 모델을 사용하여 유저가 업로드 한 이미지를 객체탐지 한 뒤 인증 조건에 부합한 경우, 인증 결과가 Firebase에 저장되는 인증 프로토콜
@@ -225,7 +227,8 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 - <b>Through this, we expect to secure access to environmental practices that allow people to carry out environmental challenges at any time in their lives. </b>
 
-
+<br/>
+<br/>
 
 - <b>본 오픈소스 프로젝트는 궁극적으로 대학교 연합 환경 챌린지 캠페인을 진행하는 데에 사용하는 등 다양한 환경 관련 이벤트 및 캠페인에 활용이 될 수 있도록 지속적으로 개발하고자 합니다. </b>
 
