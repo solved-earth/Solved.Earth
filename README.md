@@ -203,7 +203,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 
-### 2. Expected effects & application areas (기대효과 및 활용분야)
+### 2. Application Areas & Expected Effects (활용분야 및 기대효과)
 
 - <b>본 오픈소스 프로젝트는 궁극적으로 대학교 연합 환경 챌린지 캠페인을 진행하는 데에 사용하는 등 다양한 환경 관련 이벤트 및 캠페인에 활용이 될 수 있도록 지속적으로 개발하고자 합니다. </b>
 
@@ -213,7 +213,7 @@ bbbbbbbbbbbbbbbbbbbbbbb
 <br/>
 <br/>
 
-### 3. 기타
+### 3. Etc. (기타)
 
 - <b>설명1 </b>
 
