@@ -74,12 +74,69 @@ You can watch the video by clicking the image below.
 
 <br/>
 <br/>
-   
+
 ### 2. Solved.Earth App Client Application Structure (Solved.Earth 앱 클라이언트 어플리케이션 구조)
+
+&nbsp; Flutter App의 구조는 크게 Pages, Models, Sending Images로 구분할 수 있습니다.
+
+   <p align="center"><img src=./report/struct2.jpg alt="struct2" width="800"/></p>
+
+<br/>
+   
+앱 클라이언트 애플리케이션의 3가지 구조에 대한 설명입니다. 
+
+<details>
+<summary><b>Pages</b></summary>
+<div markdown="1">       
+&nbsp;&nbsp; 초기 앱 실행 시 Main.dart에서 앱 실행에 필요한 dotenv, firebase 그리고 provider의 초기 설정을 진행합니다. 이후, 라우터를 활용해 페이지들과 연결된 사이드바에 접근합니다.
+
+
+&nbsp;&nbsp; 유저에게 표시되는 화면은 main page(메인 화면), tree design page(나무 디자인 화면), achievement page(업적 화면), challenge list page(도전과제 목록 화면), challenge page(도전과제 상세 화면), setting page(설정 화면)로 총 6개로 구성되어 있습니다. 이 화면들을 사이드바에 유기적으로 연결되어 유저가 쉽게 이동 가능합니다.
+
+&nbsp;&nbsp; 각 페이지에서 상세한 부분을 tile로 제작하여 components로 분리하였습니다. 특히 certification tile은 Sending Image 구조와 Models 구조가 얽혀 작동하기에 중요한 부분입니다.
+Setting page에서는 유저 등록 및 인증을 위해 Firebase와 연결합니다.
+
+</div>
+</details>
+
+<details>
+<summary><b>Models</b></summary>
+<div markdown="1">       
+&nbsp;&nbsp; 앱에서 상시적으로 변하는 변수들의 속성을 관리하기 위한 Class들의 집합체입니다.
+	
+&nbsp;&nbsp; 주된 Model은 다음과 같습니다.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.  도전과제의 정보를 담는 challenge model.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.  앱에서 활용될 나무 사진에 대한 정보를 담는 tree model.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.  이미지 전송에 필요한 데이터들을 담는 post model.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.  유저의 정보를 담는 user profile model.
+
+&nbsp;&nbsp; 위 모델에 저장된 변수의 상태는 Provider를 활용하여 데이터 제공 및 업데이트를 합니다.
+
+</div>
+</details>
+
+<details>
+<summary><b>Sending Images</b></summary>
+<div markdown="1">       
+&nbsp;&nbsp; FastApi를 통해 이미지를 전달하기 위해 각 챌린지의 고유 번호와 유저의 Uid를 쿼리 파라미터로 사용하며 이미지 파일을 multipart/form-data 형식으로 전송합니다. 이미지 전송 시 서버와 연결을 먼저 확인하며, 이후 도전과제의 성공 여부와 실패 사유를 전달받습니다.
+
+&nbsp;&nbsp; 또한 전송한 이미지를 Firebase에 유저별로 저장하며 추후 활용 가능한 형태로 사용 및 변환할 예정입니다.
+
+</div>
+</details>
+
+<br/>
+<br/>
+   
+### 3. Data Refining & Model Training Detail View (데이터 전처리 & 모델 트레이닝 상세 구조)
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct3.jpg alt="struct2" width="800"/></p>
+   <p align="center"><img src=./report/struct3.jpg alt="struct3" width="800"/></p>
 
 <br/>
    
@@ -109,11 +166,11 @@ You can watch the video by clicking the image below.
 <br/>
 <br/>
    
-### 3. API Detail View (API 상세 구조)
+### 4. API Detail View (API 상세 구조)
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct4.jpg alt="struct3" width = "800"/></p>
+   <p align="center"><img src=./report/struct4.jpg alt="struct4" width = "800"/></p>
 
 <br/>
 
