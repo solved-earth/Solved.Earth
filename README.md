@@ -77,13 +77,13 @@ You can watch the video by clicking the image below.
 
 ### 2. Solved.Earth App Client Application Structure (Solved.Earth 앱 클라이언트 어플리케이션 구조)
 
-&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+&nbsp; Flutter App의 구조는 크게 Pages, Models, Sending Images로 구분할 수 있습니다.
 
    <p align="center"><img src=./report/struct2.jpg alt="struct2" width="800"/></p>
 
 <br/>
    
-앱 클라이언트 애플리케이션의 n가지 모듈의 기능은 다음과 같다. 
+앱 클라이언트 애플리케이션의 3가지 구조에 대한 설명입니다. 
 
 <details>
 <summary><b>AAAAAAAAA</b></summary>
