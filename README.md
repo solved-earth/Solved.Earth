@@ -305,6 +305,7 @@ The images below show only part of the project.
 </b>
 <br/>
 <br/>
+<br/>
 
 ### 2. Application Areas & Expected Effects (활용분야 및 기대효과)
 
@@ -325,21 +326,13 @@ The images below show only part of the project.
 
 ### 3. Etc. (기타)
 
-- <b>설명1 </b>
+- <b>Model Training Result </b>
 
-	부가설명1
+	https://github.com/solved-earth/YOLOv5_train
 
-- <b>설명2 </b>
+- <b>YOLOv5 Google Colab </b>
 
-	부가설명2
-
-- <b>설명3 </b>
-
-	부가설명3
-	
-- <b>설명4 </b>
-
-	부가설명4
+	https://colab.research.google.com/drive/1L50j02n3ogPLDO8EDrmT3pPWsjqXA5zo#scrollTo=epOCkbBvv71B&uniqifier=2
 
 <br/>
 <br/>
