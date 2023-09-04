@@ -43,7 +43,7 @@ class ImageStoreMethods {
     String neterror = 'Network Error Occurred';
 
     String apiUrl =
-        '$baseUrl/upload-images?username=$currentUserUid&challenge_name=recycle';
+        '$baseUrl/upload-images?username=$currentUserUid&challenge_id=${index + 1}';
     Uri uri = Uri.parse(apiUrl); // Create a URI for the API endpoint
 
     // Function to handle the API response
