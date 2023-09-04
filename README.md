@@ -64,10 +64,11 @@ You can watch the video by clicking the image below.
 
 ### 1. Solved.Earth System Structure (Solved.Earth 시스템 구조)
 
-&nbsp;&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaa
+&nbsp;&nbsp; Solved.Earth는 유저가 다양한 환경 챌린지를 수행할 수 있는 모바일 플랫폼입니다. Dart 기반의 Flutter 프레임워크를 사용하고, 전체적인 챌린지 인증 프로토콜은 대부분 파이썬으로 작성되었습니다. 자세한 챌린지 인증 프로토콜의 구조는 아래 3번(API 상세 구조)을 참고하시길 바랍니다.
    
-&nbsp;&nbsp; bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbb
+&nbsp;&nbsp; Flutter App에서 FastAPI를 통해 사진을 전송하면 detect.py의 Load Test Data 부분에 사진이 입력되며 YOLOv5로 트레이닝 된 모델을 통해 챌린지 인증 통과 여부를 도출합니다. 이렇게 도출된 결과를 바탕으로 FastAPI를 통해 인증 성공 시, 사진이 Firebase Cloud Storage 유저별 디렉토리에 저장이 되고 인증 실패 시, Flutter App UI 상에 snackbar로 어떤 물체가 인식되지 않았는지 나타납니다.
+
+&nbsp;&nbsp; 유저 등록 및 인증은 Firebase Authentication을 통해 개별적인 유저별 UID로 판단하며 유저 데이터는 Cloud Firestore 데이터베이스에 유저의 이름, 이메일, 생일, UID, 인증한 챌린지와 그 사진에 대한 데이터가 저장됩니다.
 
    <p align="center"><img src=./report/struct1.jpg alt="struct1" width="800"/></p>
 
@@ -168,8 +169,14 @@ bbbbbbbbbbbbbbbbbbbbbbb
 
 ### - Dev. Environment (개발 환경) 
 
-![Windows 10](https://img.shields.io/badge/Windows%2010-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
+![Windows 11](https://img.shields.io/badge/Windows%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+### - Dev. Tool (개발 도구)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
 
 ### - Framework (프레임워크)
 
@@ -183,11 +190,6 @@ bbbbbbbbbbbbbbbbbbbbbbb
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-### - Dev. Tool (개발 도구)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
 <br/>
 <br/>
 
@@ -196,24 +198,51 @@ bbbbbbbbbbbbbbbbbbbbbbb
 ### 1. Project Image (프로젝트 사진)
 
 <b> 
+The images below show only part of the project.
+<br/>
+아래 사진들은 프로젝트의 일부만 보여줍니다.
+<b> 
+<br/>
+<br/>
+<b> 
 
 - 메인 화면 & 사이드바 화면 & 나무 변경하기 화면
- <img src=./report/appview/mainpage.png alt="mainpage" height = "1000" /><img src=./report/appview/sidebar.png alt="sidebar" height = "1000" /><img src=./report/appview/tree_slide_show.gif alt="tree_slide_show" height = "1000" />
+ <img src=./report/appview/mainpage.png alt="mainpage" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/sidebar.png alt="sidebar" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/tree_slide_show.gif alt="tree_slide_show" height = "500" />
  
 <br/><br/>
 
  - 챌린지 화면
- <img src=./report/appview/challenge_list.png alt="challenge_list" height = "1000" /><img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "1000" />
+ <img src=./report/appview/challenge_list.png alt="challenge_list" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "500" />
  
 <br/><br/>
 
- - 설정 화면 & 오픈소스 라이선스 화면 & 서비스 이용약관 화면 & 개인정보처리 화면
- <img src=./report/appview/settings_page.png alt="settings_page" height = "1000" /><img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "1000" /><img src=./report/appview/challenge_list.png alt="challenge_list" height = "1000" /><img src=./report/appview/challenge_detail.png alt="challenge_detail" height = "1000" />
+ - 설정 화면 & 서비스 이용약관 화면 & 개인정보처리 화면 & 오픈소스 라이선스 화면
+ <img src=./report/appview/settings_page.png alt="settings_page" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/tos.png alt="tos" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/personal_info.png alt="personal_info" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/oss_license.png alt="oss_license" height = "500" />
 
 <br/><br/>
 
  - 가입하기 화면
- <img src=./report/appview/signin.png alt="signin" height = "1000" /><img src=./report/appview/signin_1.png alt="signin_1" height = "1000" /><img src=./report/appview/signin_2.png alt="signin_2" height = "1000" /><img src=./report/appview/signin_3.png alt="signin_3" height = "1000" /><img src=./report/appview/signin_4.png alt="signin_4" height = "1000" />
+ <img src=./report/appview/signin.png alt="signin" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/signin_1.png alt="signin_1" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/signin_2.png alt="signin_2" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/signin_3.png alt="signin_3" height = "500" />
+ &nbsp;&nbsp;&nbsp;
+ <img src=./report/appview/signin_4.png alt="signin_4" height = "500" />
 
  
 </b>
