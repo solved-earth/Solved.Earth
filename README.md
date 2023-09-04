@@ -74,12 +74,12 @@ You can watch the video by clicking the image below.
 
 <br/>
 <br/>
-   
+
 ### 2. Solved.Earth App Client Application Structure (Solved.Earth 앱 클라이언트 어플리케이션 구조)
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct3.jpg alt="struct2" width="800"/></p>
+   <p align="center"><img src=./report/struct2.jpg alt="struct2" width="800"/></p>
 
 <br/>
    
@@ -109,11 +109,45 @@ You can watch the video by clicking the image below.
 <br/>
 <br/>
    
-### 3. API Detail View (API 상세 구조)
+### 3. Data Refining & Model Training Detail View (데이터 전처리 & 모델 트레이닝 상세 구조)
+
+&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+   <p align="center"><img src=./report/struct3.jpg alt="struct3" width="800"/></p>
+
+<br/>
+   
+앱 클라이언트 애플리케이션의 n가지 모듈의 기능은 다음과 같다. 
+
+<details>
+<summary><b>AAAAAAAAA</b></summary>
+<div markdown="1">       
+&nbsp;&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</div>
+</details>
+
+<details>
+<summary><b>BBBBBBBBB</b></summary>
+<div markdown="1">       
+&nbsp;&nbsp; bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+</div>
+</details>
+
+<details>
+<summary><b>CCCCCCCCCC</b></summary>
+<div markdown="1">       
+&nbsp;&nbsp; cccccccccccccccccccccccccccccc
+</div>
+</details>
+
+<br/>
+<br/>
+   
+### 4. API Detail View (API 상세 구조)
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct4.jpg alt="struct3" width = "800"/></p>
+   <p align="center"><img src=./report/struct4.jpg alt="struct4" width = "800"/></p>
 
 <br/>
 
