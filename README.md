@@ -86,21 +86,41 @@ You can watch the video by clicking the image below.
 앱 클라이언트 애플리케이션의 3가지 구조에 대한 설명입니다. 
 
 <details>
-<summary><b>AAAAAAAAA</b></summary>
+<summary><b>Pages</b></summary>
 <div markdown="1">       
-&nbsp;&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+&nbsp;&nbsp; 초기 앱 실행 시 Main.dart에서 앱 실행에 필요한 dotenv, firebase 그리고 provider의 초기 설정을 진행합니다. 이후, 라우터를 활용해 페이지들과 연결된 사이드바에 접근합니다.
+
+
+&nbsp;&nbsp; 유저에게 표시되는 화면은 main page(메인 화면), tree design page(나무 디자인 화면), achievement page(업적 화면), challenge list page(도전과제 목록 화면), challenge page(도전과제 상세 화면), setting page(설정 화면)로 총 6개로 구성되어 있습니다. 이 화면들을 사이드바에 유기적으로 연결되어 유저가 쉽게 이동 가능합니다.
+
+&nbsp;&nbsp; 각 페이지에서 상세한 부분을 tile로 제작하여 components로 분리하였습니다. 특히 certification tile은 Sending Image 구조와 Models 구조가 얽혀 작동하기에 중요한 부분입니다.
+Setting page에서는 유저 등록 및 인증을 위해 Firebase와 연결합니다.
+
 </div>
 </details>
 
 <details>
-<summary><b>BBBBBBBBB</b></summary>
+<summary><b>Models</b></summary>
 <div markdown="1">       
-&nbsp;&nbsp; bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+&nbsp;&nbsp; 앱에서 상시적으로 변하는 변수들의 속성을 관리하기 위한 Class들의 집합체입니다.
+	
+&nbsp;&nbsp; 주된 Model은 다음과 같습니다.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.  도전과제의 정보를 담는 challenge model.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.  앱에서 활용될 나무 사진에 대한 정보를 담는 tree model.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.  이미지 전송에 필요한 데이터들을 담는 post model.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.  유저의 정보를 담는 user profile model.
+
+&nbsp;&nbsp; 위 모델에 저장된 변수의 상태는 Provider를 활용하여 데이터 제공 및 업데이트를 합니다.
+
 </div>
 </details>
 
 <details>
-<summary><b>CCCCCCCCCC</b></summary>
+<summary><b>Sending Images</b></summary>
 <div markdown="1">       
 &nbsp;&nbsp; cccccccccccccccccccccccccccccc
 </div>
