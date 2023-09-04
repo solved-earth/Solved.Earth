@@ -64,10 +64,11 @@ You can watch the video by clicking the image below.
 
 ### 1. Solved.Earth System Structure (Solved.Earth 시스템 구조)
 
-&nbsp;&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaa
+&nbsp;&nbsp; Solved.Earth는 유저가 다양한 환경 챌린지를 수행할 수 있는 모바일 플랫폼입니다. Dart 기반의 Flutter 프레임워크를 사용하고, 전체적인 챌린지 인증 프로토콜은 대부분 파이썬으로 작성되었습니다. 자세한 챌린지 인증 프로토콜의 구조는 아래 3번(API 상세 구조)을 참고하시길 바랍니다.
    
-&nbsp;&nbsp; bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbb
+&nbsp;&nbsp; Flutter App에서 FastAPI를 통해 사진을 전송하면 detect.py의 Load Test Data 부분에 사진이 입력되며 YOLOv5로 트레이닝 된 모델을 통해 챌린지 인증 통과 여부를 도출합니다. 이렇게 도출된 결과를 바탕으로 FastAPI를 통해 인증 성공 시, 사진이 Firebase Cloud Storage 유저별 디렉토리에 저장이 되고 인증 실패 시, Flutter App UI 상에 snackbar로 어떤 물체가 인식되지 않았는지 나타납니다.
+
+&nbsp;&nbsp; 유저 등록 및 인증은 Firebase Authentication을 통해 개별적인 유저별 UID로 판단하며 유저 데이터는 Cloud Firestore 데이터베이스에 유저의 이름, 이메일, 생일, UID, 인증한 챌린지와 그 사진에 대한 데이터가 저장됩니다.
 
    <p align="center"><img src=./report/struct1.jpg alt="struct1" width="800"/></p>
 
