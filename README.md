@@ -122,7 +122,10 @@ Setting page에서는 유저 등록 및 인증을 위해 Firebase와 연결합�
 <details>
 <summary><b>Sending Images</b></summary>
 <div markdown="1">       
-&nbsp;&nbsp; cccccccccccccccccccccccccccccc
+&nbsp;&nbsp; FastApi를 통해 이미지를 전달하기 위해 각 챌린지의 고유 번호와 유저의 Uid를 쿼리 파라미터로 사용하며 이미지 파일을 multipart/form-data 형식으로 전송합니다. 이미지 전송 시 서버와 연결을 먼저 확인하며, 이후 도전과제의 성공 여부와 실패 사유를 전달받습니다.
+
+&nbsp;&nbsp; 또한 전송한 이미지를 Firebase에 유저별로 저장하며 추후 활용 가능한 형태로 사용 및 변환할 예정입니다.
+
 </div>
 </details>
 
