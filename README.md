@@ -79,7 +79,7 @@ You can watch the video by clicking the image below.
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct2.jpg alt="struct2" width="800"/></p>
+   <p align="center"><img src=./report/struct3.jpg alt="struct2" width="800"/></p>
 
 <br/>
    
@@ -113,7 +113,7 @@ You can watch the video by clicking the image below.
 
 &nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-   <p align="center"><img src=./report/struct3.jpg alt="struct3" width = "800"/></p>
+   <p align="center"><img src=./report/struct4.jpg alt="struct3" width = "800"/></p>
 
 <br/>
 
