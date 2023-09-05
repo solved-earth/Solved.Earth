@@ -168,38 +168,67 @@ Setting page에서는 유저 등록 및 인증을 위해 Firebase와 연결합�
    
 ### 4. API Detail View (API 상세 구조)
 
-&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
    <p align="center"><img src=./report/struct4.jpg alt="struct4" width = "800"/></p>
 
 <br/>
 
 <details>
-<summary><b>AAAAAAAAAAAAAAAAA</b></summary>
-<div markdown="1">       
-&nbsp;&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaa
+<summary><b>POST /upload-image</b></summary>
+<div markdown="1">
+&nbsp;&nbsp; Flutter-App sends POST request to `/upload-image`
+	
+<br/>
+<br/>
+
+&nbsp;&nbsp; Flutter-App에서 `/upload-image`로 POST request를 보냅니다. 
 </div>
 </details>
 
 <details>
-<summary><b>BBBBBBBBBBBBBBBBBBBBBB</b></summary>
-<div markdown="1">       
-&nbsp;&nbsp; bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+<summary><b>Save file(image) to server</b></summary>
+<div markdown="1">
+&nbsp;&nbsp; First, the image file is saved on the server. At this time, the save path and file name are created based on username, challenge_name, and datetime.
+	
+<br/>
+<br/>
 
+&nbsp;&nbsp; 먼저 file의 value로 들어온 이미지 파일을 서버에 저장합니다. 이때 저장 경로 및 파일명은 username과 challenge_name, datetime을 토대로 만들어집니다.
 </div>
 </details>
 
 <details>
-<summary><b>CCCCCCCCCCCCCCCCCCCCCCCC</b></summary>
-<div markdown="1">       
-&nbsp;&nbsp; cccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+<summary><b>MySQL DB</b></summary>
+<div markdown="1">
+&nbsp;&nbsp; There are User, Photo table int the DB. Server stores requeset data int DB.
+	
+<br/>
+<br/>
+
+&nbsp;&nbsp; DB에는 user, photo 테이블이 존재합니다. request data를 구조화하여 db에 저장합니다.
 </div>
 </details>
 
 <details>
-<summary><b>DDDDDDDDDDDDDDDDDDDDDDDDDDD</b></summary>
-<div markdown="1">       
-&nbsp;&nbsp; dddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+<summary><b>detect.py</b></summary>
+<div markdown="1">
+&nbsp;&nbsp; If the request is correct, detect.py determines whether the challenge was successful. detect.py recognizes an image and returns the objects observed in the image in the form of a set.
+	
+<br/>
+<br/>
+
+&nbsp;&nbsp; request가 올바르다면 detect.py에서 challenge 성공 여부를 판별합니다. detect.py는 이미지를 인식하고 해당 이미지에서 관찰되는 objects를 set 형태로 반환합니다.
+</div>
+</details>
+
+<details>
+<summary><b>return</b></summary>
+<div markdown="1">
+&nbsp;&nbsp; Based on the object set returned from detect.py, check whether the answer conditions for the challenge are satisfied. If the answer condition is satisfied, `{'success':True}` is returned to flutter-app. If not, `{'success':False}` is returned along with the correct answer condition that is not included in the image.
+	
+<br/>
+<br/>
+
+&nbsp;&nbsp; detect.py에서 반환된 사물 리스트를 토대로 해당 challenge의 정답 조건에 부합하는지 확인합니다. 만약 challenge의 정답 조건에 부합하다면 flutter-app에게 `{'success':True}`를 반환하고, 부합하지 않다면 `{'success':False}`와 함께 이미지에 포함되지 않은 정답 조건을 반환합니다.
 </div>
 </details>
 
