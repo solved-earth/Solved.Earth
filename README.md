@@ -33,7 +33,7 @@ This is still ongoing project. Please contact us(ecotreegrowing@gmail.com) to di
 You can watch the video by clicking the image below.
 하단 이미지를 클릭하시면 영상을 시청하실 수 있습니다.
 
-[<img src="썸네일 이미지 URL" alt="Solved.Earth"/>](영상 URL)
+[<img src="https://i.ytimg.com/vi/QBzceRQ_o9g/maxresdefault.jpg" alt="Solved.Earth"/>](https://youtu.be/QBzceRQ_o9g)
 
 <br/>
 <br/>
