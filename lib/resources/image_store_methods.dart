@@ -43,8 +43,9 @@ class ImageStoreMethods {
     String neterror = 'Network Error Occurred';
 
     String apiUrl =
-        '$baseUrl/upload-image/?username=$currentUserUid&challenge_id=${index + 1}';
+        '$baseUrl/upload-image?username=$currentUserUid&challenge_id=${(index + 1).toString()}';
     Uri uri = Uri.parse(apiUrl); // Create a URI for the API endpoint
+    print(uri.toString());
 
     // Function to handle the API response
     Future<String> handleApiResponse(Response<dynamic> response) async {
