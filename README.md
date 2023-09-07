@@ -33,7 +33,7 @@ This is still ongoing project. Please contact us(ecotreegrowing@gmail.com) to di
 You can watch the video by clicking the image below.
 하단 이미지를 클릭하시면 영상을 시청하실 수 있습니다.
 
-[<img src="썸네일 이미지 URL" alt="Solved.Earth"/>](영상 URL)
+[<img src="https://i.ytimg.com/vi/QBzceRQ_o9g/maxresdefault.jpg" alt="Solved.Earth"/>](https://youtu.be/QBzceRQ_o9g)
 
 <br/>
 <br/>
@@ -134,34 +134,53 @@ Setting page에서는 유저 등록 및 인증을 위해 Firebase와 연결합�
    
 ### 3. Data Refining & Model Training Detail View (데이터 전처리 & 모델 트레이닝 상세 구조)
 
-&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#### 🏋️YOLOv5 Training Structure(YOLOv5 학습 구조)
+![struct3](https://github.com/solved-earth/Solved.Earth/blob/main/report/struct3.jpg?raw=true)
 
-   <p align="center"><img src=./report/struct3.jpg alt="struct3" width="800"/></p>
+First, we get raw data from roboflow.com , and then re-label it according to our needs in label_edit_tool.py. This configured dataset enters train.py and model learning takes place.
+
+먼저 roboflow.com 에서 raw-data 를 가져온 다음 label_edit_tool.py에서 필요에 따라 레이블을 다시 지정합니다. 이렇게 구성된 데이터셋은 train.py로 들어가게되고 이후 모델(best.pt) 학습이 이루어집니다.
+
+#### 💻Object-detection-protocol Structure(물체인식 프로토콜 구조)
+![struct1](https://github.com/solved-earth/Solved.Earth/blob/main/report/struct1.jpg?raw=true)
+
+The learned model (best.pt) received from YOLOv5 Training goes to detect.py for object detection. The source data is then received from FastAPI. The detected classes are then stored in a set called class_names and then moved back to FastAPI.
+
+YOLOv5 Training 에서 받아온 학습된 모델(best.pt)은 detect.py로 들어가 물체 탐지가 이루어집니다. 이때 소스 데이터는 FastAPI에서 받아오게 됩니다. 이후 탐지된 클래스는 class_names라는 집합에 저장되어 다시 FastAPI로 넘어갑니다.
+
+#### 📷 Object Detection Examples(물체인식 예제)
+![](https://github.com/solved-earth/YOLOv5_train/blob/main/yolov5/runs/detect/exp9/sample8.jpg?raw=true)
+
+![](https://github.com/solved-earth/YOLOv5_train/blob/main/yolov5/runs/detect/exp5/sample4.jpg?raw=true)
+
+![](https://github.com/solved-earth/YOLOv5_train/blob/main/yolov5/runs/detect/exp7/sample6.jpg?raw=true)
+
+![](https://github.com/solved-earth/YOLOv5_train/blob/main/yolov5/runs/detect/exp8/sample7.jpg?raw=true)
+
+#### 🖼 Model Training Result(모델 학습 결과)
+
+##### 1. Confusion Matrix
+![confusion_matrix](https://github.com/solved-earth/YOLOv5_train/assets/121764610/bfe4a32d-d4ec-47e0-b79f-73cb5f66103c)
 
 <br/>
-   
-앱 클라이언트 애플리케이션의 n가지 모듈의 기능은 다음과 같다. 
 
-<details>
-<summary><b>AAAAAAAAA</b></summary>
-<div markdown="1">       
-&nbsp;&nbsp; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-</div>
-</details>
+##### 2. Curve Image
+![image](https://github.com/solved-earth/YOLOv5_train/assets/121764610/8cb2917a-6cce-4fb7-8117-260f4bf106fa)
 
-<details>
-<summary><b>BBBBBBBBB</b></summary>
-<div markdown="1">       
-&nbsp;&nbsp; bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-</div>
-</details>
+<br/>
 
-<details>
-<summary><b>CCCCCCCCCC</b></summary>
-<div markdown="1">       
-&nbsp;&nbsp; cccccccccccccccccccccccccccccc
-</div>
-</details>
+##### 3. Results Plot
+![results](https://github.com/solved-earth/YOLOv5_train/assets/121764610/2685a976-e148-494c-a339-557d5de7da5e)
+
+<br/>
+
+##### 4. Data & Label Info.
+![labels](https://github.com/solved-earth/YOLOv5_train/assets/121764610/d005945f-a0fd-4e9d-a273-b2c4a8af5351)
+
+<br/>
+
+##### 5. Labels Correlogram
+![labels_correlogram](https://github.com/solved-earth/YOLOv5_train/assets/121764610/21f9c7c2-4a9d-4a55-8cb0-1260f15cca44)
 
 <br/>
 <br/>
@@ -362,6 +381,10 @@ The images below show only part of the project.
 - <b>YOLOv5 Google Colab </b>
 
 	https://colab.research.google.com/drive/1L50j02n3ogPLDO8EDrmT3pPWsjqXA5zo#scrollTo=epOCkbBvv71B&uniqifier=2
+
+- <b> Dataset Google Drive </b>
+
+	https://drive.google.com/drive/folders/1DswDcEXzLLforWljYQMoobWRmgd_l80c?usp=sharing
 
 <br/>
 <br/>
