@@ -1,5 +1,5 @@
 
-# Solved.Earth <br/> (Mobile App to provide strong motivation for environmental protection)
+# Solved.Earth <br/> (17th Open Source Software Contest Entry Project)
 
 <br/>
 
